@@ -364,13 +364,13 @@ export const contactData = [
         icon: Facebook,
         title: "Facebook",
         description: "/EmperatrizGrafica",
-        href: "https://www.facebook.com/"
+        href: "https://www.facebook.com/profile.php?id=61569407192179"
     },
     {
         id: 5,
         icon: Instagram,
         title: "Instagram",
         description: "@emperatriz_grafica",
-        href: "https://www.instagram.com/"
+        href: "https://www.instagram.com/emperatriz.tallergrafico/"
     }
 ];
