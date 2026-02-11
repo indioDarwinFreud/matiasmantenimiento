@@ -114,5 +114,10 @@
     -   **Verificación:** Build exitoso (`npm run build`) confirmando la integridad de las rutas.
     -   **GIT:** Repositorio inicializado y subido a GitHub (`https://github.com/indioDarwinFreud/emperatriz.git`).
     -   **Deploy:** Sitio publicado en Render (`https://emperatriz-grafica.onrender.com/`).
+    -   **Integración Redes Sociales y Ajuste de UI (Contacto):**
+        -   **Social Media:** Se agregaron tarjetas de enlace a **Facebook** e **Instagram** del taller.
+        -   **Centralización:** Se unificaron todos los datos de contacto en `data.tsx` (`contactData`), facilitando la gestión de enlaces.
+        -   **Modo Compacto (Smart UI):** Se implementó una variante `compact` en `InfoCard.tsx` (menos padding, iconos a 32px, texto ajustado) para permitir que 5 tarjetas (Email, Teléfono, Ubicación, FB, IG) coexistan verticalmente sin desbordar la pantalla.
+        -   **Layout Adaptativo:** La columna de información de contacto ahora utiliza `flex-1` y `justify-between` para distribuir el espacio disponible de forma exacta a la altura del formulario de chat adyacente.
 
 
