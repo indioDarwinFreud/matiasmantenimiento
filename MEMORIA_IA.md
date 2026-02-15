@@ -119,5 +119,8 @@
         -   **Centralización:** Se unificaron todos los datos de contacto en `data.tsx` (`contactData`), facilitando la gestión de enlaces.
         -   **Modo Compacto (Smart UI):** Se implementó una variante `compact` en `InfoCard.tsx` (menos padding, iconos a 32px, texto ajustado) para permitir que 5 tarjetas (Email, Teléfono, Ubicación, FB, IG) coexistan verticalmente sin desbordar la pantalla.
         -   **Layout Adaptativo:** La columna de información de contacto ahora utiliza `flex-1` y `justify-between` para distribuir el espacio disponible de forma exacta a la altura del formulario de chat adyacente.
+*   **15/02/2026:** Ajustes Estéticos en Banner Principal.
+    -   **BannerCard:** Reducción de la altura de la banda inferior (`h-36` -> `h-20`) y del padding lateral (`px-8` -> `px-2`) para un look más estilizado y menos intrusivo.
+    -   **DiagonalStripes:** Desplazamiento del origen de las franjas (`left-0` -> `left-12`) para mejorar la composición visual de la diagonal.
 
 
