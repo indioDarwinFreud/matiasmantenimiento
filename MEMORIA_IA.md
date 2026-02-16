@@ -122,5 +122,9 @@
 *   **15/02/2026:** Ajustes Estéticos en Banner Principal.
     -   **BannerCard:** Reducción de la altura de la banda inferior (`h-36` -> `h-20`) y del padding lateral (`px-8` -> `px-2`) para un look más estilizado y menos intrusivo.
     -   **DiagonalStripes:** Desplazamiento del origen de las franjas (`left-0` -> `left-12`) para mejorar la composición visual de la diagonal.
+*   **16/02/2026:** Creación de Documentación Técnica.
+    -   **Archivo:** Se generó `DOCUMENTACION_TECNICA.md` con el detalle de arquitectura, estructura de carpetas y explicación de archivos clave para profesionalizar la entrega.
+    -   **Objetivo:** Facilitar el onboarding y el mantenimiento futuro del proyecto.
+    -   **UX/UI (Productos):** Corrección del botón "Cerrar" en el modal de vista previa de imágenes. Ahora se posiciona dentro de la pantalla en móviles (`top-2 right-2`) con fondo semitransparente para garantizar visibilidad y accesibilidad.
 
 

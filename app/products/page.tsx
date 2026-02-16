@@ -4,7 +4,7 @@ import { useState, useEffect, Suspense } from "react";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { productsData } from "@/data";
-import { Store, Search as SearchIcon, Ruler } from "lucide-react";
+import { Store, Search as SearchIcon, Ruler, X } from "lucide-react";
 import { motion } from "framer-motion";
 
 import Link from "next/link";
@@ -138,10 +138,10 @@ function ProductsContent() {
                 >
                     <div className="relative max-w-5xl w-full h-full max-h-[90vh] flex items-center justify-center">
                         <button
-                            className="absolute -top-12 right-0 text-white/50 hover:text-white transition-colors"
+                            className="absolute top-2 right-2 md:-top-12 md:right-0 z-50 p-2 bg-black/50 md:bg-transparent rounded-full md:rounded-none text-white md:text-white/50 hover:text-white hover:bg-black/70 md:hover:bg-transparent transition-all backdrop-blur-sm md:backdrop-blur-none"
                             onClick={() => setSelectedImage(null)}
                         >
-                            <span className="text-4xl font-thin">&times;</span>
+                            <X size={32} />
                         </button>
                         <img
                             src={selectedImage}
