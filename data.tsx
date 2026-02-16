@@ -153,7 +153,7 @@ export const productsData = [
         title: "Banner de 1,5m",
         location: "1m x 1,5m",
         description: "Funciona muy bien para vidrieras, anuncios verticales y promociones visibles a media distancia.",
-        image: "/Product/Altoque.jpeg",
+        image: "/Product/1x1_5mBanner.jpeg",
         category: "Banner",
         website: "/contact"
     },
@@ -171,7 +171,7 @@ export const productsData = [
         title: "Banner de 2m",
         location: "2m x 1m",
         description: "Se utiliza comúnmente en frentes de locales, carteles horizontales y publicidad visible desde la calle.",
-        image: "/Product/Altoque.jpeg",
+        image: "/Product/2x1mBanner.jpeg",
         category: "Banner",
         website: "/contact"
     },

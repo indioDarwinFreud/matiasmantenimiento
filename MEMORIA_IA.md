@@ -126,5 +126,6 @@
     -   **Archivo:** Se generó `DOCUMENTACION_TECNICA.md` con el detalle de arquitectura, estructura de carpetas y explicación de archivos clave para profesionalizar la entrega.
     -   **Objetivo:** Facilitar el onboarding y el mantenimiento futuro del proyecto.
     -   **UX/UI (Productos):** Corrección del botón "Cerrar" en el modal de vista previa de imágenes. Ahora se posiciona dentro de la pantalla en móviles (`top-2 right-2`) con fondo semitransparente para garantizar visibilidad y accesibilidad.
+    -   **Actualización de Contenidos:** Se actualizaron las imágenes de los productos "Banner de 1,5m" y "Banner de 2m" en `data.tsx` con las fotos finales (`1x1_5mBanner.jpeg`, `2x1mBanner.jpeg`).
 
 
