@@ -20,7 +20,7 @@ const BannerCard = ({ title, description }: BannerCardProps) => {
 
 
         {/* contenido del texto */}
-        <div className="relative h-full px- flex flex-col justify-center z-10 max-w-3xl">
+        <div className="relative h-full px-2 flex flex-col justify-center z-10 max-w-3xl">
           {/* 📱 MOBILE: text-2xl | 💻 PC: md:text-5xl */}
           <h2 className="text-2xl md:text-6xl font-black text-darkBg tracking-wide drop-shadow-lg uppercase stroke-black">
             {title}

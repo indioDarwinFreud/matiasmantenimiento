@@ -6,7 +6,7 @@
 **Lema:** "Traducimos códigos binarios para que se entiendan las cosas."
 
 ## Preferencias del Usuario
-1.  **Idioma:** Español (Argentino/Informal).
+1.  **Idioma:** Español Latino (Argentino/Informal) - **EXCLUYENTE**. No usar "chaval", "os", "vodros", etc. Usemos "che", "viste", "mirá", o un neutro latino profesional.
 2.  **Estilo de Trabajo:** "Somos un buen equipo".
 3.  **Estética:** Premium, Dorados, Negro, Diseño Moderno, "Wow factor".
 4.  **Enfoque:** Frontend visualmente impactante.
@@ -127,5 +127,13 @@
     -   **Objetivo:** Facilitar el onboarding y el mantenimiento futuro del proyecto.
     -   **UX/UI (Productos):** Corrección del botón "Cerrar" en el modal de vista previa de imágenes. Ahora se posiciona dentro de la pantalla en móviles (`top-2 right-2`) con fondo semitransparente para garantizar visibilidad y accesibilidad.
     -   **Actualización de Contenidos:** Se actualizaron las imágenes de los productos "Banner de 1,5m" y "Banner de 2m" en `data.tsx` con las fotos finales (`1x1_5mBanner.jpeg`, `2x1mBanner.jpeg`).
+
+*   **17/02/2026:** Ajustes visuales, limpieza de Home y definición de idioma.
+    -   **Preferencia de Idioma:** Se establece explícitamente el uso de **Español Latino (Argentino/Informal)** para toda comunicación, documentación y código (comentarios).
+    -   **Home (Limpieza):** Eliminación de la sección de Testimonios ("Lo que dicen nuestros clientes") para simplificar la portada.
+    -   **Navbar:** Aumento de opacidad en el fondo (`bg-black/80`) para mejorar contraste y legibilidad.
+    -   **DiagonalStripes (Rediseño):** Transformación de las franjas diagonales en una **Franja Horizontal** en la base del carrusel (`h-40` -> usuario ajustó a `h-20`), eliminando el `skew` para un diseño más sobrio y estable.
+    -   **BannerCard:** Ajuste de tipografía a `text-6xl` (PC) para mayor impacto y corrección de styles (`px-`).
+    -   **Data (Imágenes):** Actualización de placeholders por imágenes reales de productos (1x1m, 3x1.5m).
 
 

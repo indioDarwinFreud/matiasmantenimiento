@@ -6,6 +6,8 @@
 ---
 
 ## 🚀 Visión General
+> **Nota de Localización:** Todo el contenido, documentación y comunicación del proyecto debe mantenerse en **Español Latino**.
+
 Este documento detalla la arquitectura técnica, la estructura de carpetas y el propósito de los archivos clave del proyecto **Emperatriz Taller Gráfico**. El sitio está construido como una Single Page Application (SPA) moderna optimizada para SEO y rendimiento, utilizando el stack de **Next.js**.
 
 ### 🛠 Tech Stack
