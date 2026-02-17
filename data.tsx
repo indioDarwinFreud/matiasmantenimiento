@@ -144,7 +144,7 @@ export const productsData = [
         title: "Banner de 1m",
         location: "1m x 1m",
         description: "Tamaño ideal para señalética, cartelería de eventos o señalización de espacios. Muy versátil y fácil de transportar.",
-        image: "/Product/Altoque.jpeg", // Placeholder logic
+        image: "/Product/1mx1m.jpeg", // Placeholder logic
         category: "Banner",
         website: "/contact"
     },
@@ -180,7 +180,7 @@ export const productsData = [
         title: "Banner de 2m x 1,5m",
         location: "2m x 1,5m",
         description: "Ideal para publicidad exterior, eventos medianos y carteles que necesitan destacarse más.",
-        image: "/Product/Altoque.jpeg",
+        image: "/FeatureCard/noimporta.jpeg",
         category: "Banner",
         website: "/contact"
     },
