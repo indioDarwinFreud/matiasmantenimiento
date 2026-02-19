@@ -139,5 +139,8 @@
     -   **DiagonalStripes (Rediseño):** Transformación de las franjas diagonales en una **Franja Horizontal** en la base del carrusel (`h-40` -> usuario ajustó a `h-20`), eliminando el `skew` para un diseño más sobrio y estable.
     -   **BannerCard:** Ajuste de tipografía a `text-6xl` (PC) para mayor impacto y corrección de styles (`px-`).
     -   **Data (Imágenes):** Actualización de placeholders por imágenes reales de productos (1x1m, 3x1.5m).
+    -   **DNS (Estado):** Confirmación de que el estado "Invalid Configuration" en Vercel es normal durante las primeras horas post-delegación en Nic.ar (propagación). Se instruyó esperar sin cambiar configuraciones adicionales.
+
+*   **19/02/2026:** (Próximos Pasos) Verificación final de propagación DNS y activación de SSL en Vercel.
 
 
