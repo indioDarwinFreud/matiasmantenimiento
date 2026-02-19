@@ -129,6 +129,10 @@
     -   **Actualización de Contenidos:** Se actualizaron las imágenes de los productos "Banner de 1,5m" y "Banner de 2m" en `data.tsx` con las fotos finales (`1x1_5mBanner.jpeg`, `2x1mBanner.jpeg`).
 
 *   **17/02/2026:** Ajustes visuales, limpieza de Home y definición de idioma.
+*   **18/02/2026:** Puesta en producción con dominio propio.
+    -   **Dominio:** Adquisición y configuración de **`emperatrizgrafica.com.ar`** como dominio oficial del proyecto.
+    -   **Deploy (Vercel):** Proyecto conectado al repositorio de GitHub (`indioDarwinFreud/emperatriz`). URL de Vercel: `emperatriz.vercel.app`.
+    -   **DNS (Nic.ar):** Delegación del dominio configurada en Nic.ar apuntando a los nameservers de Vercel: `ns1.vercel-dns.com` y `ns2.vercel-dns.com`. Propagación DNS en curso (puede tardar hasta 24hs).
     -   **Preferencia de Idioma:** Se establece explícitamente el uso de **Español Latino (Argentino/Informal)** para toda comunicación, documentación y código (comentarios).
     -   **Home (Limpieza):** Eliminación de la sección de Testimonios ("Lo que dicen nuestros clientes") para simplificar la portada.
     -   **Navbar:** Aumento de opacidad en el fondo (`bg-black/80`) para mejorar contraste y legibilidad.
