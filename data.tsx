@@ -53,7 +53,7 @@ export const productsData = [
         title: "Banderas de 2m",
         location: "2m x 1,5m",
         description: "Una bandera más amplia que destaca a simple vista. Ideal para murales, tribunas y celebraciones deportivas.",
-        image: "/Product/Naza18.jpeg",
+        image: "/Product/2x1_5mBandera.jpeg",
         category: "Bandera",
         website: "/contact"
     },
@@ -62,7 +62,7 @@ export const productsData = [
         title: "Banderas de 3m",
         location: "3m x 1,5m",
         description: "Impacto garantizado. Este tamaño ofrece presencia visual fuerte para clubes, bandas y agrupaciones grandes.",
-        image: "/Product/Lolo18.jpeg",
+        image: "/Product/3x1_5mBandera.jpeg",
         category: "Bandera",
         website: "/contact"
     },
@@ -71,7 +71,7 @@ export const productsData = [
         title: "Banderas de 4m",
         location: "4m x 1,5m",
         description: "Un formato que domina el espacio. Recomendado para canchas, desfiles y eventos donde la bandera debe convertirse en protagonista.",
-        image: "/Product/Lolo18.jpeg",
+        image: "/Product/4x1_5mBandera.jpeg",
         category: "Bandera",
         website: "/contact"
     },
@@ -80,7 +80,7 @@ export const productsData = [
         title: "Banderas de 5m",
         location: "5m x 1,5m",
         description: "Gran tamaño con excelente relación entre visibilidad y portabilidad. Perfecta para colgar en tapiales, frentes amplios o tribunas.",
-        image: "/Product/Lolo18.jpeg",
+        image: "/Product/5x1_5mBandera.jpeg",
         category: "Bandera",
         website: "/contact"
     },
@@ -89,7 +89,7 @@ export const productsData = [
         title: "Banderas de 6m",
         location: "6m x 1,5m",
         description: "La elección de quienes buscan imponerse en cualquier evento o estadio. Se ve desde lejos y mantiene buena proporción.",
-        image: "/Product/Lolo18.jpeg",
+        image: "/Product/6x1_5mBandera.jpeg",
         category: "Bandera",
         website: "/contact"
     },
@@ -98,7 +98,7 @@ export const productsData = [
         title: "Banderas de 7m",
         location: "7m x 1,5m",
         description: "Ideal para hinchadas, agrupaciones numerosas o escenografías. Un tamaño que destaca por fuerza y presencia.",
-        image: "/Product/Lolo18.jpeg",
+        image: "/Product/7x1_5mBandera.jpeg",
         category: "Bandera",
         website: "/contact"
     },
@@ -107,7 +107,7 @@ export const productsData = [
         title: "Banderas de 8m",
         location: "8m x 1,5m",
         description: "Dimensión XL para ocupar toda una pared, tribuna o fondo de escenario. Pensada para alto impacto visual.",
-        image: "/Product/Lolo18.jpeg",
+        image: "/Product/8x1_5mBandera.jpeg",
         category: "Bandera",
         website: "/contact"
     },
@@ -116,7 +116,7 @@ export const productsData = [
         title: "Banderas de 9m",
         location: "9m x 1,5m",
         description: "Una bandera gigante que transforma cualquier espacio. Especial para clubes, eventos multitudinarios o producciones grandes.",
-        image: "/Product/Lolo18.jpeg",
+        image: "/Product/9x1_5mBandera.jpeg",
         category: "Bandera",
         website: "/contact"
     },
@@ -125,7 +125,7 @@ export const productsData = [
         title: "Banderas de 10m",
         location: "10m x 1,5m",
         description: "Tamaño monumental. Diseñada para quienes necesitan la máxima presencia posible y un mensaje que no pasa desapercibido.",
-        image: "/Product/Lolo18.jpeg",
+        image: "/Product/10x1_5mBandera.jpeg",
         category: "Bandera",
         website: "/contact"
     },
