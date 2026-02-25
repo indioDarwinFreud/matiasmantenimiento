@@ -9,12 +9,12 @@ const Navbar = () => {
     return (
         <div className="fixed z-50 flex flex-col items-center justify-center w-full mt-auto h-max bottom-10">
             <nav>
-                <div className="flex items-center justify-center gap-2 px-6 py-1.5 rounded-full bg-black/80 backdrop-blur-2xl border border-white/10 shadow-[0_10px_30px_rgba(0,0,0,0.5)]">
+                <div className="flex items-center justify-center gap-1 md:gap-2 px-3 md:px-6 py-1.5 rounded-full bg-black/80 backdrop-blur-2xl border border-white/10 shadow-[0_10px_30px_rgba(0,0,0,0.5)]">
 
                     {/* First Half Items */}
                     {itemsNavbar.slice(0, 2).map((item) => (
                         <div key={item.id}
-                            className={`px-3 py-1.5 transition-all duration-300 relative group
+                            className={`px-2 md:px-3 py-1.5 transition-all duration-300 relative group
                             rounded-full cursor-pointer hover:scale-110
                             ${router === item.link ? 'bg-transparent border border-primary text-primary shadow-[0_0_15px_rgba(249,115,22,0.5)] scale-110' : 'text-white/80 border border-transparent hover:text-white hover:bg-white/10'}`}
                         >
@@ -23,18 +23,18 @@ const Navbar = () => {
                     ))}
 
                     {/* Central Imperia Virtual Shortcut Icon - Popping out of the thin Navbar */}
-                    <div className="relative mx-3 w-[4.2rem] flex items-center justify-center">
+                    <div className="relative mx-1 md:mx-3 w-[3.8rem] md:w-[4.2rem] flex items-center justify-center">
 
                         {/* Large Circle container positioned absolute to not stretch the thin navbar */}
                         {/* Enlace directo a Imperia Virtual */}
-                        <a href="https://imperiavirtual.com" className="absolute w-[4.8rem] h-[4.8rem] rounded-full bg-black/90 border border-primary/50 flex items-center justify-center z-20 
+                        <a href="https://imperiavirtual.com" className="absolute w-[4.2rem] h-[4.2rem] md:w-[4.8rem] md:h-[4.8rem] rounded-full bg-black/90 border border-primary/50 flex items-center justify-center z-20 
                             shadow-[0_4px_25px_rgba(249,115,22,0.4)] hover:shadow-[0_8px_35px_rgba(249,115,22,0.7)] 
                             hover:scale-105 transition-all duration-500 cursor-pointer group">
 
                             {/* Inner Circle for depth */}
-                            <div className="w-[3.6rem] h-[3.6rem] rounded-full bg-neutral-900 border border-white/10 flex items-center justify-center">
+                            <div className="w-[3.2rem] h-[3.2rem] md:w-[3.6rem] md:h-[3.6rem] rounded-full bg-neutral-900 border border-white/10 flex items-center justify-center">
                                 {/* Text With Custom Premium Font */}
-                                <span 
+                                <span
                                     className="text-[1.7rem] font-bold tracking-[0.1em] bg-clip-text text-transparent bg-gradient-to-br from-white via-orange-200 to-primary drop-shadow-lg ml-1"
                                     style={{ fontFamily: "'Playfair Display', Georgia, 'Times New Roman', serif" }}
                                 >
@@ -48,7 +48,7 @@ const Navbar = () => {
                     {/* Second Half Items */}
                     {itemsNavbar.slice(2, 4).map((item) => (
                         <div key={item.id}
-                            className={`px-3 py-1.5 transition-all duration-300 relative group
+                            className={`px-2 md:px-3 py-1.5 transition-all duration-300 relative group
                             rounded-full cursor-pointer hover:scale-110
                             ${router === item.link ? 'bg-transparent border border-primary text-primary shadow-[0_0_15px_rgba(249,115,22,0.5)] scale-110' : 'text-white/80 border border-transparent hover:text-white hover:bg-white/10'}`}
                         >
