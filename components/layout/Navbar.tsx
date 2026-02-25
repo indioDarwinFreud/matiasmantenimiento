@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-
 import { itemsNavbar } from "@/data"
 
 const Navbar = () => {
@@ -23,23 +22,27 @@ const Navbar = () => {
                         </div>
                     ))}
 
-                    {/* Central Imperia Virtual Icon - Popping out of the thin Navbar */}
-                    <div className="relative mx-6 flex items-center justify-center">
+                    {/* Central Imperia Virtual Shortcut Icon - Popping out of the thin Navbar */}
+                    <div className="relative mx-3 w-[4.2rem] flex items-center justify-center">
 
                         {/* Large Circle container positioned absolute to not stretch the thin navbar */}
-                        <div className="absolute w-[4.8rem] h-[4.8rem] rounded-full bg-black/90 border border-primary/50 flex items-center justify-center z-20 
-                            shadow-[0_4px_25px_rgba(249,115,22,0.6)] hover:shadow-[0_8px_35px_rgba(249,115,22,0.9)] 
-                            transform -translate-y-2 hover:-translate-y-3 transition-all duration-500 cursor-pointer group">
+                        {/* Enlace directo a Imperia Virtual */}
+                        <a href="https://imperiavirtual.com" className="absolute w-[4.8rem] h-[4.8rem] rounded-full bg-black/90 border border-primary/50 flex items-center justify-center z-20 
+                            shadow-[0_4px_25px_rgba(249,115,22,0.4)] hover:shadow-[0_8px_35px_rgba(249,115,22,0.7)] 
+                            hover:scale-105 transition-all duration-500 cursor-pointer group">
 
                             {/* Inner Circle for depth */}
                             <div className="w-[3.6rem] h-[3.6rem] rounded-full bg-neutral-900 border border-white/10 flex items-center justify-center">
-                                {/* Text */}
-                                <span className="font-serif text-[1.6rem] font-bold tracking-[0.1em] bg-clip-text text-transparent bg-gradient-to-br from-white via-orange-200 to-primary drop-shadow-lg ml-1">
+                                {/* Text With Custom Premium Font */}
+                                <span 
+                                    className="text-[1.7rem] font-bold tracking-[0.1em] bg-clip-text text-transparent bg-gradient-to-br from-white via-orange-200 to-primary drop-shadow-lg ml-1"
+                                    style={{ fontFamily: "'Playfair Display', Georgia, 'Times New Roman', serif" }}
+                                >
                                     IV
                                 </span>
                             </div>
 
-                        </div>
+                        </a>
                     </div>
 
                     {/* Second Half Items */}
