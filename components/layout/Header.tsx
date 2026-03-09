@@ -4,6 +4,7 @@ import Link from "next/link";
 import { Cinzel } from "next/font/google";
 import { useState, useEffect } from "react";
 import Image from "next/image";
+import { siteConfig } from "@/config";
 
 const cinzel = Cinzel({ subsets: ["latin"] });
 
@@ -27,8 +28,8 @@ const Header = () => {
             className="flex flex-col items-center justify-center p-2 transition-all duration-500 bg-transparent"
           >
             <Image
-              src="/icono/LogoTres.png"
-              alt="Logo Emperatriz"
+              src={siteConfig.logo.main}
+              alt={`Logo ${siteConfig.name}`}
               width={100}
               height={50}
               className={`rounded-xl transition-all duration-500 group-hover:scale-105 

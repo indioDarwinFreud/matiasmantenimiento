@@ -3,12 +3,16 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { User, MessageSquare, Send } from "lucide-react";
+import { siteConfig } from "@/config";
+import Separador from "@/components/ui/separador";
+import { NeonButton } from "@/components/ui/NeonButton";
 
 import FadeIn from "@/components/ui/FadeIn";
 
 import { RacingCardContainer } from "@/components/ui/RacingCardContainer";
 import { InfoCard } from "@/components/cards/InfoCard";
 import { contactData } from "@/data";
+
 
 export default function ContactPage() {
     const [name, setName] = useState("");
@@ -34,21 +38,25 @@ export default function ContactPage() {
                         <h1 className="text-5xl md:text-7xl font-bold mb-4 text-primary font-cinzel">
                             CONTÁCTENOS
                         </h1>
-                        <p className="text-xl text-black max-w-2xl mx-auto font-urbanist">
-                            Estamos aquí para ayudarte a crecer.
-                        </p>
+
                     </div>
                 </FadeIn>
 
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
                     <FadeIn delay={0.2} direction="left">
-                        <RacingCardContainer className="h-full p-8 md:p-10">
+                        <RacingCardContainer
+                            glass
+                            className="h-full p-8 md:p-10"
+                        >
                             <div className="mb-8 text-center border-b border-white/10 pb-6">
-                                <h2 className="text-3xl font-bold text-white mb-2 font-gotham flex items-center justify-center gap-3">
-                                    <MessageSquare className="w-8 h-8 text-orange-500" />
+                                <h2 className="text-3xl font-bold text-white mb-2 font-gotham flex items-center justify-center gap-3 italic uppercase tracking-wider">
+                                    <MessageSquare className="w-8 h-8 text-primary" />
                                     Iniciar Chat
                                 </h2>
-                                <p className="text-gray-400 text-sm md:text-base">
+                                <p
+                                    className="text-sm md:text-base font-medium opacity-80"
+                                    style={{ color: siteConfig.theme.textColors.secondaryLight }}
+                                >
                                     Completa tus datos y te responderemos por WhatsApp al instante.
                                 </p>
                             </div>
@@ -62,7 +70,7 @@ export default function ContactPage() {
                                             type="text"
                                             value={name}
                                             onChange={(e) => setName(e.target.value)}
-                                            className="w-full !bg-neutral-900/50 border border-neutral-700/50 rounded-xl p-4 pl-12 text-white focus:border-orange-500 focus:!bg-neutral-900 focus:outline-none transition-all duration-300 placeholder:text-neutral-600 shadow-inner"
+                                            className="w-full !bg-neutral-900/50 border border-neutral-700/50 rounded-xl p-4 pl-12 text-white focus:border-primary focus:!bg-neutral-900 focus:outline-none transition-all duration-300 placeholder:text-neutral-600 shadow-inner"
                                             placeholder="Ej: Juan Pérez"
                                             required
                                         />
@@ -76,17 +84,20 @@ export default function ContactPage() {
                                         <textarea
                                             value={message}
                                             onChange={(e) => setMessage(e.target.value)}
-                                            className="w-full !bg-neutral-900/50 border border-neutral-700/50 rounded-xl p-4 pl-12 text-white focus:border-orange-500 focus:!bg-neutral-900 focus:outline-none transition-all duration-300 h-40 placeholder:text-neutral-600 shadow-inner resize-none"
+                                            className="w-full !bg-neutral-900/50 border border-neutral-700/50 rounded-xl p-4 pl-12 text-white focus:border-primary focus:!bg-neutral-900 focus:outline-none transition-all duration-300 h-40 placeholder:text-neutral-600 shadow-inner resize-none"
                                             placeholder="Contanos qué necesitas..."
                                             required
                                         ></textarea>
                                     </div>
                                 </div>
 
-                                <Button type="submit" variant="primary" className="w-full py-6 text-lg shadow-xl shadow-orange-500/20 text-white font-bold bg-gradient-to-r from-orange-600 to-orange-700 hover:from-orange-500 hover:to-orange-600 border border-orange-500/50 rounded-xl transition-all duration-300 flex items-center justify-center gap-3 group">
+                                <NeonButton
+                                    type="submit"
+                                    className="w-full py-7"
+                                >
                                     <Send className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                                    Enviar a WhatsApp
-                                </Button>
+                                    ENVIAR A WHATSAPP
+                                </NeonButton>
                             </form>
                         </RacingCardContainer>
                     </FadeIn>

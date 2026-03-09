@@ -5,17 +5,37 @@ import { Clock, MapPin } from "lucide-react";
 import FadeIn from "@/components/ui/FadeIn";
 import Link from "next/link";
 import Image from "next/image";
+import { siteConfig } from "@/config";
 
+/**
+ * Footer — Pie de página global premium
+ * Grilla de 3 columnas: Ubicación | Logo + Redes | Horarios.
+ * Al fondo muestra el Copyright y la firma "Creado por Imperia Virtual".
+ *
+ * Datos: `contactData` y `businessHours` de data.tsx.
+ * Estilo: fondo y color primario de config.ts → theme.backgroundFooter / primaryColor.
+ */
 const Footer = () => {
     const locationData = contactData.find(c => c.title === "Ubicación");
     const socialData = contactData.filter(c => c.title === "Facebook" || c.title === "Instagram" || c.title === "Teléfono");
     const currentYear = new Date().getFullYear();
 
     return (
-        <footer className="w-full bg-neutral-950/80 backdrop-blur-xl py-12 md:py-20 border-t border-primary/30 relative overflow-hidden shadow-[0_-10px_40px_-15px_rgba(234,88,12,0.15)]">
+        <footer
+            className="w-full backdrop-blur-xl py-12 md:py-20 border-t border-primary/30 relative overflow-hidden shadow-[0_-10px_40px_-15px_rgba(192,192,192,0.15)]"
+        >
+            {/* Capa de fondo "Fumigada" aislada para no desenfocar el texto */}
+            <div 
+                className="absolute inset-0 pointer-events-none -z-10"
+                style={{
+                    
+                    filter: 'blur(20px)',     /* Difumina los píxeles grandes */
+                    transform: 'scale(1.05)'  /* Escala para evitar los bordes blancos del blur */
+                }}
+            />
 
             {/* Premium Gradient Overlay with Radial Glow */}
-            <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom,_var(--tw-gradient-stops))] from-primary/10 via-black/50 to-transparent pointer-events-none"></div>
+
 
             <div className="max-w-6xl mx-auto px-6 relative z-10">
 
@@ -25,7 +45,7 @@ const Footer = () => {
                     {/* Column 1: Location */}
                     <FadeIn delay={0.1} className="flex flex-col items-center md:items-start space-y-5">
                         <div className="flex items-center space-x-3 text-primary mb-1">
-                            <MapPin className="w-6 h-6 drop-shadow-[0_0_8px_rgba(234,88,12,0.8)]" />
+                            <MapPin className="w-6 h-6 drop-shadow-[0_0_8px_rgba(192,192,192,0.8)]" />
                             <h4 className="font-gotham font-black uppercase tracking-[0.2em] text-sm text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-400">
                                 Dónde Estamos
                             </h4>
@@ -51,8 +71,8 @@ const Footer = () => {
                         {/* Elegant Brand Logo */}
                         <div className="relative w-72 h-32 group-hover:scale-105 transition-transform duration-500 hover:drop-shadow-[0_0_15px_rgba(255,255,255,0.2)]">
                             <Image
-                                src="/icono/LogoDos.png"
-                                alt="Logo Emperatriz"
+                                src={siteConfig.logo.main}
+                                alt={`Logo ${siteConfig.name}`}
                                 fill
                                 className="object-contain"
                                 style={{
@@ -70,7 +90,7 @@ const Footer = () => {
                                         href={social.href}
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="p-3 rounded-full border border-white/10 bg-black/40 text-gray-400 hover:text-white hover:bg-primary/20 hover:border-primary/60 hover:shadow-[0_0_15px_rgba(234,88,12,0.4)] transition-all duration-300 group"
+                                        className="p-3 rounded-full border border-white/10 bg-black/40 text-gray-400 hover:text-white hover:bg-primary/20 hover:border-primary/60 hover:shadow-[0_0_15px_rgba(192,192,192,0.4)] transition-all duration-300 group"
                                         aria-label={social.title}
                                     >
                                         <social.icon className="w-5 h-5 group-hover:scale-110 transition-transform" />
@@ -86,7 +106,7 @@ const Footer = () => {
                     {/* Column 3: Business Hours */}
                     <FadeIn delay={0.3} className="flex flex-col items-center md:items-end space-y-5">
                         <div className="flex items-center space-x-3 text-primary mb-1">
-                            <Clock className="w-6 h-6 drop-shadow-[0_0_8px_rgba(234,88,12,0.8)]" />
+                            <Clock className="w-6 h-6 drop-shadow-[0_0_8px_rgba(192,192,192,0.8)]" />
                             <h4 className="font-gotham font-black uppercase tracking-[0.2em] text-sm text-transparent bg-clip-text bg-gradient-to-l from-white to-gray-400">
                                 Horarios
                             </h4>
@@ -95,7 +115,7 @@ const Footer = () => {
                             {businessHours.map((schedule, index) => (
                                 <div key={index} className="flex flex-col items-center md:items-end w-full group">
                                     <span className="font-urbanist font-bold text-gray-200 text-sm tracking-widest group-hover:text-white transition-colors">{schedule.day}</span>
-                                    <span className="font-urbanist text-primary/80 font-medium text-sm mt-0.5 group-hover:text-primary transition-colors">{schedule.hours}</span>
+                                    <span className="font-urbanist text-gray-400 font-medium text-sm mt-0.5 group-hover:text-primary transition-colors">{schedule.hours}</span>
                                 </div>
                             ))}
                         </div>
@@ -108,7 +128,7 @@ const Footer = () => {
                     <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
 
                     <p className="font-urbanist text-gray-500 text-xs tracking-widest uppercase">
-                        &copy; {currentYear} Emperatriz Gráfica.
+                        &copy; {currentYear} {siteConfig.name}.
                     </p>
 
                     {/* The Imperia Virtual Signature */}
@@ -118,7 +138,7 @@ const Footer = () => {
                             href="https://imperiavirtual.com"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="relative inline-block text-transparent bg-clip-text bg-gradient-to-r from-primary via-orange-300 to-primary font-black text-sm md:text-base tracking-[0.2em] transform hover:scale-105 transition-all duration-300 drop-shadow-[0_0_12px_rgba(234,88,12,0.8)] hover:drop-shadow-[0_0_25px_rgba(234,88,12,1)]"
+                            className="relative inline-block text-transparent bg-clip-text bg-gradient-to-r from-primary via-neutral-300 to-primary font-black text-sm md:text-base tracking-[0.2em] transform hover:scale-105 transition-all duration-300 drop-shadow-[0_0_12px_rgba(192,192,192,0.8)] hover:drop-shadow-[0_0_25px_rgba(192,192,192,1)]"
                         >
                             IMPERIA VIRTUAL
                             {/* Decorative glowing underline */}

@@ -1,8 +1,10 @@
 "use client";
 
-
-
-import DiagonalStripes from "@/components/ui/DiagonalStripes";
+/**
+ * BannerCard — Tarjeta de overlay de texto para banners de categoría
+ * Se posiciona de forma absoluta sobre una imagen de fondo.
+ * Muestra un título en estilo "impacto" (skewed, color primary) y una descripción.
+ */
 
 interface BannerCardProps {
   title: string;

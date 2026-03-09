@@ -8,30 +8,47 @@ export default {
   ],
   theme: {
     extend: {
+      // ------------------------------------------------------------------
+      // Tipografías
+      // Las variables CSS son inyectadas por next/font en app/layout.tsx.
+      // Los nombres de clase Tailwind son: font-body, font-display, font-alt
+      // ------------------------------------------------------------------
       fontFamily: {
-        heading: ["var(--font-urbanist)", "sans-serif"],
-        serif: ["var(--font-cinzel)", "serif"],
-        gotham: ["var(--font-montserrat)", "sans-serif"],
+        body: ["var(--font-urbanist)", "sans-serif"], // Texto general
+        display: ["var(--font-cinzel)", "serif"],      // Logo y títulos de alto impacto
+        alt: ["var(--font-montserrat)", "sans-serif"], // Títulos modernos/geométricos
       },
+      // ------------------------------------------------------------------
+      // Colores del Sistema
+      // El color `primary` y `primaryHover` se actualizan desde config.ts.
+      // Los colores `gold` se usan en el Footer y acentos premium.
+      // ------------------------------------------------------------------
       colors: {
-        secondary: "#6d2626",
-        borravino: "#6d2626",
-        darkBg: "#0a0a0a", // Darker, more premium black
+        // Color principal (actualizable desde config.ts → theme.primaryColor)
+        primary: "var(--primary-color, #c0c0c0)",
+        primaryHover: "var(--primary-hover, #e0e0e0)",
+
+        // Escala de dorados – usados en footer, separadores y efectos premium
         gold: {
           100: "#f9f1d8",
           200: "#f0deaa",
           300: "#e6c670",
           400: "#deb23c",
-          500: "#d4a017", // Classic Gold
+          500: "#d4a017", // Gold clásico
           600: "#aa8012",
           700: "#80600e",
         },
-        primary: "#f97316", // Main Orange
-        accent: "#00f0ff", // Cyberpunk accent if needed
+
+        // Fondo oscuro de emergencia (alternativa a backgroundMain de config.ts)
+        darkBg: "#0a0a0a",
+
+        // Glassmorphism base
         glass: "rgba(255, 255, 255, 0.1)",
       },
+      // ------------------------------------------------------------------
+      // Gradientes predefinidos
+      // ------------------------------------------------------------------
       backgroundImage: {
-        "degrade-azul": "linear-gradient(300deg, #fffff 0%, #000000 100%)",
         "gold-gradient": "linear-gradient(to right, #d4a017, #f9f1d8, #d4a017)",
       },
     },

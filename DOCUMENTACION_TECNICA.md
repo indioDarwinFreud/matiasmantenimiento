@@ -1,4 +1,4 @@
-# 📘 Documentación Técnica - Emperatriz Taller Gráfico
+# 📘 Documentación Técnica - PlantillaProducto
 
 **Fecha de Última Actualización:** 16/02/2026 (Actualización de Contenidos)
 **Versión del Proyecto:** 2.0 (Rebranding Completo)
@@ -8,7 +8,7 @@
 ## 🚀 Visión General
 > **Nota de Localización:** Todo el contenido, documentación y comunicación del proyecto debe mantenerse en **Español Latino**.
 
-Este documento detalla la arquitectura técnica, la estructura de carpetas y el propósito de los archivos clave del proyecto **Emperatriz Taller Gráfico**. El sitio está construido como una Single Page Application (SPA) moderna optimizada para SEO y rendimiento, utilizando el stack de **Next.js**.
+Este documento detalla la arquitectura técnica, la estructura de carpetas y el propósito de los archivos clave del proyecto **PlantillaProducto**. El sitio está construido como una Single Page Application (SPA) moderna optimizada para SEO y rendimiento, utilizando el stack de **Next.js**.
 
 ### 🛠 Tech Stack
 *   **Framework:** [Next.js 15+](https://nextjs.org/) (App Router)
@@ -45,7 +45,7 @@ Aquí reside la lógica de navegación. Cada carpeta representa una URL en el na
 | `layout.tsx` | Global | **Layout Principal**. Define la estructura base (HTML, Body, Navbar, Footer) y fuentes (Cinzel, Urbanist). |
 | `about/page.tsx` | `/about` | **Quiénes Somos**. Historia, identidad y pilares de la marca. |
 | `contact/page.tsx`| `/contact` | **Contacto**. Formulario inteligente con redirección a WhatsApp API. |
-| `products/page.tsx`| `/products` | **Catálogo**. Listado filtrable de Banderas y Banners con modales de vista previa. |
+| `products/page.tsx`| `/products` | **Catálogo**. Listado filtrable de productos y elementos de portfolio con modales de vista previa. |
 | `globals.css` | N/A | Estilos globales, variables CSS y directivas de Tailwind. |
 
 ### 🧩 `/components` (Componentes)
@@ -84,14 +84,14 @@ Primitivas visuales y elementos de diseño atómico.
 Este archivo centraliza **toda la información textual y lógica de datos** del sitio. **Si necesitas cambiar un texto, precio, imagen o enlace, es aquí.**
 
 *   `itemsNavbar`: Enlaces del menú principal.
-*   `productsData`: Catálogo completo (Banderas, Banners) con medidas y descripciones.
+*   `productsData`: Catálogo completo de artículos y líneas premium con medidas y descripciones genericas.
 *   `portfolioData`: Trabajos destacados mostrados en la Home.
 *   `carouselImages`: Imágenes del slider principal.
 *   `featuresData`: Beneficios de la empresa.
 *   `contactData`: Enlaces de redes sociales, teléfono, email y ubicación.
 
 ### 🎨 `tailwind.config.ts` (Sistema de Diseño)
-Define la identidad visual de Emperatriz.
+Define la identidad visual de PlantillaProducto.
 *   **Colores**: Extiende la paleta con colores de marca (probablemente naranjas, negros, grises).
 *   **Fuentes**: Define las variables para `font-cinzel` (Títulos) y `font-urbanist` (Cuerpo).
 *   **Animaciones**: Configuración de keyframes personalizados si los hay.

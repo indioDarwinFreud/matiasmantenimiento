@@ -1,7 +1,28 @@
+/**
+ * ============================================================
+ * DATA.TSX — Datos del Sitio
+ * ============================================================
+ * Este es el segundo archivo clave para personalizar el sitio
+ * (junto con config.ts).
+ *
+ * GUÍA RÁPIDA:
+ *   • Para agregar un producto  → editá `productsData`
+ *   • Para agregar un testimonio → editá `testimonialsData`
+ *   • Para cambiar el menú     → editá `itemsNavbar`
+ *
+ * Los íconos se importan de lucide-react. Para ver la lista
+ * completa de íconos disponibles: https://lucide.dev/icons/
+ * ============================================================
+ */
 
-import { HomeIcon, Store, Users, Mail, MessageSquareQuote, Palette, ShieldCheck, Truck, Facebook, Instagram, Phone, MapPin } from "lucide-react";
+import { HomeIcon, Store, Users, Mail, MessageSquareQuote, ShieldCheck, MapPin, Facebook, Instagram, Phone } from "lucide-react";
+import { siteConfig } from "./config";
+import type { NavItem, Product, Testimonial, ContactItem, BusinessHour } from "./types";
 
-export const itemsNavbar = [
+// ============================================================
+// MENÚ DE NAVEGACIÓN
+// ============================================================
+export const itemsNavbar: NavItem[] = [
     {
         id: 1,
         title: "Inicio",
@@ -28,372 +49,148 @@ export const itemsNavbar = [
     },
 ];
 
-// Data for the Products Page (Catalog/Sizes)
-export const productsData = [
+// ============================================================
+// PRODUCTOS DEL CATÁLOGO
+// ============================================================
+// ✏️ CÓMO AGREGAR UN PRODUCTO:
+//   1. Copiá uno de los bloques de abajo.
+//   2. Cambiale el `id` (debe ser único y numérico).
+//   3. Reemplazá title, location, description, image y category.
+//   4. Subí la imagen a la carpeta /public y ponés la ruta aquí
+//      (ej: "/mi-producto.jpg").
+//   5. El botón "WhatsApp" se arma automáticamente con el nombre
+//      del producto y el teléfono de config.ts.
+// ============================================================
+export const productsData: Product[] = [
     {
         id: 1,
-        title: "Banderas de 73cm",
-        location: "73cm x 1m",
-        description: "Tamaño compacto ideal para balcones, ventanas o espacios reducidos. Perfecta para quienes buscan visibilidad sin ocupar demasiado lugar.",
-        image: "/Product/73x1.jpeg",
-        category: "Bandera",
-        website: "/contact"
+        title: "Edición Limitada Alpha",
+        location: "Colección Exclusiva",
+        description: "Diseño minimalista con acabados premium. Ideal para quienes buscan exclusividad y elegancia en cada detalle.",
+        image: "/placeholder.svg",
+       
+        website: "/contact",
     },
     {
         id: 2,
-        title: "Banderas de 1m",
-        location: "1m x 1,5m",
-        description: "Un formato práctico y muy cómodo de ubicar. Aporta presencia sin ocupar demasiado espacio, ideal para quienes necesitan algo discreto y fácil de colocar.",
-        image: "/Product/BanderaFer.jpeg",
-        category: "Bandera",
-        website: "/contact"
+        title: "Serie Beta Essential",
+        location: "Línea Clásica",
+        description: "La combinación perfecta entre funcionalidad y estética. Un producto pensado para el uso diario sin perder el estilo.",
+        image: "/placeholder.svg",
+        
+        website: "/contact",
     },
     {
         id: 3,
-        title: "Banderas de 2m",
-        location: "2m x 1,5m",
-        description: "Una bandera más amplia que destaca a simple vista. Ideal para murales, tribunas y celebraciones deportivas.",
-        image: "/Product/2x1_5mBandera.jpeg",
-        category: "Bandera",
-        website: "/contact"
+        title: "Gamma Signature",
+        location: "Edición de Autor",
+        description: "Fabricado con materiales de la más alta calidad, representando el pináculo de nuestro diseño y manufactura.",
+        image: "/placeholder.svg",
+        
+        website: "/contact",
     },
     {
         id: 4,
-        title: "Banderas de 3m",
-        location: "3m x 1,5m",
-        description: "Impacto garantizado. Este tamaño ofrece presencia visual fuerte para clubes, bandas y agrupaciones grandes.",
-        image: "/Product/3x1_5mBandera.jpeg",
-        category: "Bandera",
-        website: "/contact"
+        title: "Delta Vanguard",
+        location: "Innovación Pura",
+        description: "Líneas modernas y tecnología de vanguardia fusionadas en un solo producto que redefine los estándares actuales.",
+        image: "/placeholder.svg",
+        
+        website: "/contact",
     },
     {
         id: 5,
-        title: "Banderas de 4m",
-        location: "4m x 1,5m",
-        description: "Un formato que domina el espacio. Recomendado para canchas, desfiles y eventos donde la bandera debe convertirse en protagonista.",
-        image: "/Product/4x1_5mBandera.jpeg",
-        category: "Bandera",
-        website: "/contact"
+        title: "Omega Classic",
+        location: "Atemporal",
+        description: "El diseño que nunca pasa de moda. Simple, directo y construido para durar por generaciones.",
+        image: "/placeholder.svg",
+        
+        website: "/contact",
     },
     {
         id: 6,
-        title: "Banderas de 5m",
-        location: "5m x 1,5m",
-        description: "Gran tamaño con excelente relación entre visibilidad y portabilidad. Perfecta para colgar en tapiales, frentes amplios o tribunas.",
-        image: "/Product/5x1_5mBandera.jpeg",
-        category: "Bandera",
-        website: "/contact"
-    },
-    {
-        id: 7,
-        title: "Banderas de 6m",
-        location: "6m x 1,5m",
-        description: "La elección de quienes buscan imponerse en cualquier evento o estadio. Se ve desde lejos y mantiene buena proporción.",
-        image: "/Product/6x1_5mBandera.jpeg",
-        category: "Bandera",
-        website: "/contact"
-    },
-    {
-        id: 8,
-        title: "Banderas de 7m",
-        location: "7m x 1,5m",
-        description: "Ideal para hinchadas, agrupaciones numerosas o escenografías. Un tamaño que destaca por fuerza y presencia.",
-        image: "/Product/7x1_5mBandera.jpeg",
-        category: "Bandera",
-        website: "/contact"
-    },
-    {
-        id: 9,
-        title: "Banderas de 8m",
-        location: "8m x 1,5m",
-        description: "Dimensión XL para ocupar toda una pared, tribuna o fondo de escenario. Pensada para alto impacto visual.",
-        image: "/Product/8x1_5mBandera.jpeg",
-        category: "Bandera",
-        website: "/contact"
-    },
-    {
-        id: 10,
-        title: "Banderas de 9m",
-        location: "9m x 1,5m",
-        description: "Una bandera gigante que transforma cualquier espacio. Especial para clubes, eventos multitudinarios o producciones grandes.",
-        image: "/Product/9x1_5mBandera.jpeg",
-        category: "Bandera",
-        website: "/contact"
-    },
-    {
-        id: 11,
-        title: "Banderas de 10m",
-        location: "10m x 1,5m",
-        description: "Tamaño monumental. Diseñada para quienes necesitan la máxima presencia posible y un mensaje que no pasa desapercibido.",
-        image: "/Product/10x1_5mBandera.jpeg",
-        category: "Bandera",
-        website: "/contact"
-    },
-    {
-        id: 12,
-        title: "Banderas de tamaño personalizado",
-        location: "?m x ?m",
-        description: "Personaliza el tamaño de tu bandera según tus necesidades.",
-        image: "/Product/Perzonalizado.jpeg",
-        category: "Bandera",
-        website: "/contact"
-    },
-    // BANNERS
-    {
-        id: 13,
-        title: "Banner de 1m",
-        location: "1m x 1m",
-        description: "Tamaño ideal para señalética, cartelería de eventos o señalización de espacios. Muy versátil y fácil de transportar.",
-        image: "/Product/1mx1m.jpeg", // Placeholder logic
-        category: "Banner",
-        website: "/contact"
-    },
-    {
-        id: 14,
-        title: "Banner de 1,5m",
-        location: "1m x 1,5m",
-        description: "Funciona muy bien para vidrieras, anuncios verticales y promociones visibles a media distancia.",
-        image: "/Product/1x1_5mBanner.jpeg",
-        category: "Banner",
-        website: "/contact"
-    },
-    {
-        id: 15,
-        title: "Banner de 1,5mx2m",
-        location: "1,5m x 1,5m",
-        description: "Es perfecta como fondo para fotos, decoración de eventos y cartelería con buena presencia visual.",
-        image: "/Product/Altoque.jpeg",
-        category: "Banner",
-        website: "/contact"
-    },
-    {
-        id: 16,
-        title: "Banner de 2m",
-        location: "2m x 1m",
-        description: "Se utiliza comúnmente en frentes de locales, carteles horizontales y publicidad visible desde la calle.",
-        image: "/Product/2x1mBanner.jpeg",
-        category: "Banner",
-        website: "/contact"
-    },
-    {
-        id: 17,
-        title: "Banner de 2m x 1,5m",
-        location: "2m x 1,5m",
-        description: "Ideal para publicidad exterior, eventos medianos y carteles que necesitan destacarse más.",
-        image: "/FeatureCard/noimporta.jpeg",
-        category: "Banner",
-        website: "/contact"
-    },
-    {
-        id: 18,
-        title: "Banner de 2,5m",
-        location: "2,5m x 1m",
-        description: "Excelente para frentes anchos, cartelería larga y promociones permanentes en exterior.",
-        image: "/Product/Altoque.jpeg",
-        category: "Banner",
-        website: "/contact"
-    },
-    {
-        id: 19,
-        title: "Banner de 2,5m x 1,5m",
-        location: "2,5m x 1,5m",
-        description: "Muy usada en eventos importantes, fondos fotográficos grandes y publicidad de alto impacto.",
-        image: "/Product/Altoque.jpeg",
-        category: "Banner",
-        website: "/contact"
-    },
-    {
-        id: 20,
-        title: "Banner de 3m x 1m",
-        location: "3m x 1m",
-        description: "Pensada para cartelería exterior grande, frentes comerciales y anuncios visibles desde lejos.",
-        image: "/Product/Altoque.jpeg",
-        category: "Banner",
-        website: "/contact"
-    },
-    {
-        id: 21,
-        title: "Banner de 3m x 1,5m",
-        location: "3m x 1,5m",
-        description: "Ideal para escenarios, eventos grandes y promociones principales que requieren máxima visibilidad.",
-        image: "/Product/3mx1_5mBanner.jpeg",
-        category: "Banner",
-        website: "/contact"
-    },
-    {
-        id: 22,
-        title: "Banner de 3,5m x 1,5m",
-        location: "3,5m x 1,5m",
-        description: "Ideal para escenarios, eventos grandes y promociones principales que requieren máxima visibilidad.",
-        image: "/Product/3_5m1_5m.jpeg",
-        category: "Banner",
-        website: "/contact"
-    },
-    {
-        id: 23,
-        title: "Banner de ?m x ?m",
-        location: "?m x ?m",
-        description: "Ideal para escenarios, eventos grandes y promociones principales que requieren máxima visibilidad.",
-        image: "/Product/PerzonilizadoBanner.jpeg",
-        category: "Banner",
-        website: "/contact"
+        title: "Zenith Pro",
+        location: "Alto Rendimiento",
+        description: "Para los usuarios más exigentes. Cada aspecto ha sido optimizado para entregar el máximo rendimiento posible.",
+        image: "/placeholder.svg",
+        
+        website: "/contact",
     },
 ];
 
-// Data for Featured Works Section (Portfolio/Clients)
-export const portfolioData = [
+// ============================================================
+// TESTIMONIOS DE CLIENTES
+// ============================================================
+// ✏️ CÓMO AGREGAR UN TESTIMONIO:
+//   1. Copiá un bloque, cambiá el id, name, role, initials y content.
+//   2. Las iniciales (initials) son las 2 primeras letras del nombre
+//      (ej: "Elena Martínez" → "EM").
+// ============================================================
+export const testimonialsData: Testimonial[] = [
     {
         id: 1,
-        title: "Club Argentino",
-        location: "Mendoza",
-        description: "Realizamos la renovación completa de banderas para la hinchada oficial. Telas reforzadas para soportar el clima y el uso intenso en la tribuna.",
-        image: "/carousel/Argentino.jpeg",
-        category: "Fútbol",
-        website: "/products?category=Bandera"
+        name: "Elena M.",
+        role: "Directora Ejecutiva",
+        initials: "EM",
+        content: "El nivel de atención al detalle y la calidad del producto final superaron completamente nuestras expectativas. Altamente recomendados.",
     },
     {
         id: 2,
-        title: "El Calamar",
-        location: "Buenos Aires",
-        description: "Banderas gigantes con impresión HD. Logramos capturar cada detalle del escudo con colores que no destiñen.",
-        image: "/carousel/ElCalamar.jpeg",
-        category: "Clubes",
-        website: "/products?category=Bandera"
-    },
-    {
-        id: 3,
-        title: "Banderas de Cumpleaños",
-        location: "Outdoor / Indoor",
-        description: "Diseño personalizado, telas resistentes y colores vibrantes para que tu cumpleaños brille.",
-        image: "/Product/Lolo18.jpeg",
-        category: "Cumpleaños",
-        website: "/products?category=Bandera"
-    },
-    {
-        id: 4,
-        title: "Banners Publicitarios",
-        location: "Publicidad Visual",
-        description: "Destacá tu negocio con banners de alto impacto. Ideales para eventos, locales y promociones.",
-        image: "/Product/Altoque.jpeg",
-        category: "Publicidad",
-        website: "/products?category=Banner"
-    }
-];
-
-export const carouselImages = [
-    {
-        src: "/carousel/Argentino.jpeg",
-        alt: "Bandera Club Argentino",
-        title: "Club Argentino",
-        description: "Cartelería personalizada en tela y lona reforzada de alta resistencia."
-    },
-    {
-        src: "/carousel/ElCalamar.jpeg",
-        alt: "Bandera El Calamar",
-        title: "El Calamar",
-        description: "Impresión HD ideal para hinchadas y eventos deportivos."
-    },
-    {
-        src: "/carousel/Expreso.jpeg",
-        alt: "Bandera Expreso",
-        title: "El Expreso",
-        description: "Colores vibrantes, apta para exterior e interior."
-    },
-    {
-        src: "/carousel/Felices18.jpeg",
-        alt: "Bandera Cumpleaños 18",
-        title: "Felices 18",
-        description: "Diseño totalmente personalizado con nombre y dedicatoria."
-    }
-];
-
-// New Data used for Testimonials in app/page.tsx
-export const testimonialsData = [
-    {
-        id: 1,
-        name: "Laura Pérez",
-        role: "Promo 24",
-        initials: "LP",
-        content: "La bandera de egresados quedó increíble. La tela es súper resistente y los colores brillan un montón. ¡Gracias Emperatriz!",
-    },
-    {
-        id: 2,
-        name: "Martín Juárez",
-        role: "Dueño de Kiosco",
-        initials: "MJ",
-        content: "Hicimos los banners para el local y quedaron perfectos. Muy buena atención y rapidez en la entrega.",
+        name: "Carlos V.",
+        role: "Fundador",
+        initials: "CV",
+        content: "Increíble nivel de profesionalismo. Los acabados son de primera línea y transmiten exactamente el valor premium que buscábamos.",
     },
 ];
 
-// Data for FeatureSection (Why Choose Us)
-export const featuresData = [
-    {
-        id: 1,
-        icon: Palette,
-        title: "Diseño Personalizado",
-        description: "Creamos el diseño exacto que tenés en mente, con colores vivos y detalles precisos.",
-        image: "/FeatureCard/noimporta.jpeg",
-        imagePosition: undefined
-    },
-    {
-        id: 2,
-        icon: ShieldCheck,
-        title: "Calidad Premium",
-        description: "Usamos telas resistentes y tintas de larga duración. Garantía de excelente terminación.",
-        image: "/FeatureCard/qlk.jpeg",
-        imagePosition: "center"
-    },
-    {
-        id: 3,
-        icon: Truck,
-        title: "Envíos a Todo el País",
-        description: "Recibí tu pedido donde estés. Trabajamos con los correos más confiables.",
-        image: "/FeatureCard/ximena.jpeg",
-        imagePosition: "center"
-    }
-];
-
-// Contact Data with Social Media
-
-export const contactData = [
+// ============================================================
+// DATOS DE CONTACTO (generados desde config.ts)
+// ============================================================
+// ⚠️ No edites este bloque directamente.
+//    Para cambiar el teléfono, email, ubicación o redes sociales,
+//    modificá config.ts → secciones contact y socials.
+// ============================================================
+export const contactData: ContactItem[] = [
     {
         id: 1,
         icon: Mail,
         title: "Email",
-        description: "emperatriztallergrafico@gmail.com",
-        href: "mailto:emperatriztallergrafico@gmail.com"
+        description: siteConfig.contact.email,
+        href: `mailto:${siteConfig.contact.email}`,
     },
     {
         id: 2,
         icon: Phone,
         title: "Teléfono",
-        description: "+54 9 261 270-0341",
-        href: "https://wa.me/5492612700341"
+        description: siteConfig.contact.phone,
+        href: `https://wa.me/${siteConfig.contact.phone.replace("+", "")}?text=${encodeURIComponent(siteConfig.contact.whatsappText)}`,
     },
     {
         id: 3,
         icon: MapPin,
         title: "Ubicación",
-        description: "Mendoza, Argentina",
-        href: "https://maps.google.com/?q=Mendoza,Argentina"
+        description: siteConfig.contact.location,
+        href: siteConfig.contact.mapsLink,
     },
     {
         id: 4,
         icon: Facebook,
         title: "Facebook",
-        description: "/EmperatrizGrafica",
-        href: "https://www.facebook.com/profile.php?id=61569407192179"
+        description: siteConfig.socials.facebookHandle,
+        href: siteConfig.socials.facebook,
     },
     {
         id: 5,
         icon: Instagram,
         title: "Instagram",
-        description: "@emperatriz_grafica",
-        href: "https://www.instagram.com/emperatriz.tallergrafico/"
-    }
+        description: siteConfig.socials.instagramHandle,
+        href: siteConfig.socials.instagram,
+    },
 ];
 
-export const businessHours = [
-    { day: "Lunes a Viernes", hours: "9:00 - 13:00 / 17:00 - 20:00" },
-    { day: "Sáb., Dom. y Feriados", hours: "Cerrado" }
-];
+// ============================================================
+// HORARIOS DE ATENCIÓN (generados desde config.ts)
+// ============================================================
+// ⚠️ Para cambiar los horarios, modificá config.ts → businessHours.
+// ============================================================
+export const businessHours: BusinessHour[] = siteConfig.businessHours;

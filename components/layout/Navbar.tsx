@@ -4,6 +4,14 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { itemsNavbar } from "@/data"
 
+/**
+ * Navbar — "The Nucleus Design"
+ * Barra de navegación flotante fija en la parte inferior de la pantalla.
+ * Diseño tipo "pastilla de cristal" con ícono central que enlaza a imperiavirtual.com.
+ *
+ * Datos: consume `itemsNavbar` de data.tsx.
+ * Estilo activo: detecta la ruta actual con `usePathname` y aplica borde + glow al ícono activo.
+ */
 const Navbar = () => {
     const router = usePathname()
     return (
@@ -17,7 +25,7 @@ const Navbar = () => {
                         <div key={item.id}
                             className={`px-2 md:px-3 py-1.5 transition-all duration-300 relative group
                             rounded-full cursor-pointer hover:scale-110
-                            ${router === item.link ? 'bg-transparent border border-primary text-primary shadow-[0_0_15px_rgba(249,115,22,0.5)] scale-110' : 'text-white/80 border border-transparent hover:text-white hover:bg-white/10'}`}
+                            ${router === item.link ? 'bg-transparent border border-primary text-primary shadow-[0_0_15px_rgba(192,192,192,0.5)] scale-110' : 'text-white/80 border border-transparent hover:text-white hover:bg-white/10'}`}
                         >
                             <Link href={item.link} className="relative z-10">{item.icon}</Link>
                         </div>
@@ -29,14 +37,14 @@ const Navbar = () => {
                         {/* Large Circle container positioned absolute to not stretch the thin navbar */}
                         {/* Enlace directo a Imperia Virtual */}
                         <a href="https://imperiavirtual.com" className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[4.2rem] h-[4.2rem] md:w-[4.8rem] md:h-[4.8rem] rounded-full bg-black/90 border border-primary/50 flex items-center justify-center z-20 
-                            shadow-[0_4px_25px_rgba(249,115,22,0.4)] hover:shadow-[0_8px_35px_rgba(249,115,22,0.7)] 
+                            shadow-[0_4px_25px_rgba(192,192,192,0.4)] hover:shadow-[0_8px_35px_rgba(192,192,192,0.7)] 
                             hover:scale-105 transition-all duration-500 cursor-pointer group">
 
                             {/* Inner Circle for depth */}
                             <div className="w-[3.2rem] h-[3.2rem] md:w-[3.6rem] md:h-[3.6rem] rounded-full bg-neutral-900 border border-white/10 flex items-center justify-center">
                                 {/* Text With Custom Premium Font */}
                                 <span
-                                    className="text-[1.7rem] font-bold tracking-[0.1em] bg-clip-text text-transparent bg-gradient-to-br from-white via-orange-200 to-primary drop-shadow-lg ml-1"
+                                    className="text-[1.7rem] font-bold tracking-[0.1em] bg-clip-text text-transparent bg-gradient-to-br from-white via-neutral-300 to-primary drop-shadow-lg ml-1"
                                     style={{ fontFamily: "'Playfair Display', Georgia, 'Times New Roman', serif" }}
                                 >
                                     IV
@@ -51,7 +59,7 @@ const Navbar = () => {
                         <div key={item.id}
                             className={`px-2 md:px-3 py-1.5 transition-all duration-300 relative group
                             rounded-full cursor-pointer hover:scale-110
-                            ${router === item.link ? 'bg-transparent border border-primary text-primary shadow-[0_0_15px_rgba(249,115,22,0.5)] scale-110' : 'text-white/80 border border-transparent hover:text-white hover:bg-white/10'}`}
+                            ${router === item.link ? 'bg-transparent border border-primary text-primary shadow-[0_0_15px_rgba(192,192,192,0.5)] scale-110' : 'text-white/80 border border-transparent hover:text-white hover:bg-white/10'}`}
                         >
                             <Link href={item.link} className="relative z-10">{item.icon}</Link>
                         </div>
