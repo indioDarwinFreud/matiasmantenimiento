@@ -5,11 +5,13 @@ import { User, MessageSquare, Send } from "lucide-react";
 import { siteConfig } from "@/config";
 import { NeonButton } from "@/components/ui/NeonButton";
 
+
 import FadeIn from "@/components/ui/FadeIn";
 
 import { RacingCardContainer } from "@/components/ui/RacingCardContainer";
 import { InfoCard } from "@/components/cards/InfoCard";
 import { contactData } from "@/data";
+
 
 
 export default function ContactPage() {
@@ -19,7 +21,7 @@ export default function ContactPage() {
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
 
-        const phoneNumber = "5492612700341";
+        const phoneNumber = siteConfig.contact.phone;
         const text = `Hola, soy ${name}. ${message}`;
         const encodedText = encodeURIComponent(text);
 

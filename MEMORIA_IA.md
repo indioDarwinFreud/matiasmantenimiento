@@ -138,18 +138,8 @@
     *   **Refactorización Senior:** Estandarización de arquitectura en todo el ecosistema. Se impulsó la separación de responsabilidades (datos en `/data`, estilos en `globals.css`) para componentes complejos.
     *   **Directivas Globales:** Sincronización de reglas de oro (No inventar datos, Documentación en Español, Eficiencia de proceso) en todos los proyectos de la red Imperia.
     *   **Interactividad Premium:** Implementación de carruseles avanzados con tarjetas CTA integradas y leyendas inteligentes para mejorar la conversión y UX.
-    *   **12/03/2026 - Evolución de Marca y Diferenciación Técnica:**
-    - **[LOGO PREMIUM V2]**: Rediseño total del logo inyectado por código. Se adoptó la fuente **Goldman** para las "MM" entrelazadas (estilo afilado y potente) y **Russo One** para el texto de marca. Se implementó un efecto de oro metálico 3D con contorno (`WebkitTextStroke`) y brillos dinámicos.
-    - **[SECCIÓN DIFERENCIALES]**: Se sacrificó la vista genérica de productos por una página de **Diferenciales** (`/products`). Grilla de impacto 2x2 con estética Glassmorphism que destaca los 4 pilares competitivos (Matriculado, Trayectoria, Respuesta, Confianza).
-    - **[REDISEÑO PERSONAL ABOUT]**: Transformación radical de `/about`. Pasó de ser un texto genérico de "plantilla producto" a una biografía profesional de **Matías Alfaro**. Enfoque en "Conoce al Profesional", humanizando la marca con 20 años de historia y compromiso real.
-    - **[HEADER SCROLL-REACTIVO]**: El logo volvió a su posición original (izquierda). Se implementó lógica de scroll que activa una cápsula de cristal y un efecto de **sombra contorneada dinámica** (`drop-shadow` agresivo) para asegurar legibilidad total sobre cualquier fondo.
-    - **[OPTIMIZACIÓN MOBILE]**: Ajustes quirúrgicos en la tarjeta de Urgencias (evitado solapamiento de badge y descripción) y escalado responsivo del logo en el header. (Matias Mantenimiento)
-
-*   **09/03/2026 - Unificación Visual y Refinamiento Premium:**
-    - **[LIMPIEZA DE DATOS]**: Se eliminó la propiedad `category` de los productos en `data.tsx` y se comentó en `types/index.ts` para simplificar la estructura de datos y evitar distracciones visuales (tabs/filtros) en el catálogo.
-    - **[REFACTORIZACIÓN ABOUT]**: Se migró la sección "Nuestra Historia" en la página de Quiénes Somos al componente estándar `RacingCardContainer.tsx`. Esto garantiza la reutilización de código y la coherencia visual con el resto del sitio.
-    - **[ESTILO FUMIGADO AVANZADO]**: Se rediseñó el recuadro de texto interior en "Nuestra Historia" aplicando un efecto de **Glassmorphism Fumigado** (`backdrop-blur-md` + `bg-black/40`). 
-    - **[REFINAMIENTO FUMIGADO]**: Se eliminó el fondo opaco del `RacingCardContainer` en la sección "Nuestra Historia" para permitir la visibilidad del fondo global de mármol. Se aumentó el desenfoque a `backdrop-blur-xl` y se ajustó la capa interna con un blur de 40px, logrando una paridad estética total con el efecto del Footer.
-    - **[PROPIEDAD GLASS]**: Se profesionalizó el código creando la prop `glass` en `RacingCardContainer.tsx`. Esta propiedad centraliza el estilo de transparencia, desenfoque profundo y borde dorado neón. Se añadieron comentarios técnicos detallados en el componente para facilitar su uso.
-    - **[UNIFICACIÓN CONTACTO]**: Se aplicó la prop `glass` al formulario de contacto y a todas las `InfoCard.tsx` (Email, Teléfono, etc.), logrando que toda la web comparta el mismo lenguaje visual de "vidrio esmerilado" y opulencia.
-    - **[CONFIGURACIÓN]**: El usuario seleccionó el tema `SILVER_PREMIUM` como activo para la sesión final.
+    *   **12/03/2026 - Restauración y Consolidación de Identidad:**
+    - **[IDENTIDAD REAL]**: Se aclaró que el usuario es **Luis** y el dueño del negocio es su cuñado, **Matías Echave**. Se actualizaron nombres y el correo (`matiasdeechave@gmail.com`) en todo el sitio.
+    - **[LOGO V1 RESTAURADO]**: Se volvió a la estética original de las "MM" en fuente **Cinzel** por código, eliminando versiones experimentales. Se añadió un efecto de desaparecer por scroll en dispositivos móviles para mejorar la UX. 
+    - **[RESTABLECIMIENTO GIT]**: Se corrigió un error de vinculación de repositorios, asegurando que `plantillas.git` volviera a su estado base y `matiasmantenimiento.git` contuviera el código actual.
+    - **[LECCIÓN TÉCNICA - SITECONFIG]**: Se documentó la obligatoriedad de usar `siteConfig` (de `@/config`) en lugar del autocompletado genérico de `config`, para evitar importar módulos de Node/process que rompen el frontend. (Global)
