@@ -4,7 +4,7 @@ import { contactData, businessHours } from "@/data";
 import { Clock, MapPin } from "lucide-react";
 import FadeIn from "@/components/ui/FadeIn";
 import Link from "next/link";
-import Image from "next/image";
+import Logo from "@/components/ui/Logo";
 import { siteConfig } from "@/config";
 
 /**
@@ -69,16 +69,8 @@ const Footer = () => {
                         <div className="hidden md:block absolute top-0 w-1/2 h-[1px] bg-gradient-to-r from-transparent via-primary/50 to-transparent"></div>
 
                         {/* Elegant Brand Logo */}
-                        <div className="relative w-72 h-32 group-hover:scale-105 transition-transform duration-500 hover:drop-shadow-[0_0_15px_rgba(255,255,255,0.2)]">
-                            <Image
-                                src={siteConfig.logo.main}
-                                alt={`Logo ${siteConfig.name}`}
-                                fill
-                                className="object-contain"
-                                style={{
-                                    filter: "drop-shadow(0 0 10px rgba(255,255,255,0.8)) drop-shadow(0 0 20px rgba(255,255,255,0.4))",
-                                }}
-                            />
+                        <div className="relative group-hover:scale-105 transition-transform duration-500">
+                             <Logo size="lg" />
                         </div>
 
                         {/* Premium Social Icons */}

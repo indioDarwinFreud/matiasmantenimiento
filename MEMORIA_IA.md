@@ -12,10 +12,11 @@
 4.  **Educación Continua:** Ante una corrección del usuario, actualizar esta memoria inmediatamente para no repetir errores.
 
 ## Preferencias del Usuario
-1.  **Idioma:** Español Latino (Argentino/Informal) - **EXCLUYENTE**. No usar "chaval", "os", "vosotros", etc. Usemos "che", "viste", "mirá", o un neutro latino profesional.
-2.  **Estilo de Trabajo:** "Somos un buen equipo".
-3.  **Estética:** Premium, Dorados, Negro, Naranja (para PlantillaProducto), Diseño Moderno, "Wow factor".
-4.  **Enfoque:** Frontend visualmente impactante.
+1.  **Nombre:** Luis (El usuario es Luis. Matías Alfaro es el cuñado de Luis y el dueño del negocio).
+2.  **Idioma:** Español Latino (Argentino/Informal) - **EXCLUYENTE Y OBLIGATORIO**. El asistente debe comunicarse SIEMPRE en este idioma, incluso si la interfaz o las herramientas están en inglés. Prohibido el uso de modismos españoles ("chaval", "guay", "vosotros"). Usar "che", "viste", "mirá", "chiflame", etc.
+3.  **Estilo de Trabajo:** "Somos un buen equipo".
+4.  **Estética:** Premium, Dorados, Negro, Naranja (para PlantillaProducto), Diseño Moderno, "Wow factor". **Importante:** Para Matias Mantenimiento, el logo original (Azul/Verde) es SOLO REFERENCIA. La marca activa debe ser Gold Empire (Dorados/Negros).
+5.  **Enfoque:** Frontend visualmente impactante.
 
 ## Proyectos Activos
 ### 1. Imperia Virtual (Proyecto Principal)
@@ -24,11 +25,15 @@
 *   **Stack:** Next.js, Tailwind CSS, Framer Motion/Swiper.
 *   **Diseño:** Degradados metálicos (`text-gold-gradient`), Logo minimalista.
 
-### 2. PlantillaProducto (Sub-Producto)
-*   **Descripción:** Plantilla web premium, escalable y configurable, diseñada originalmente como un taller gráfico pero adaptada a un producto genérico y altamente profesional.
-*   **Estado:** Sitio web principal (Home). Branding plateado y neutro. Antes de Enero 2026, era "Imperia Virtual". Desplegado en `plantillaproducto.com`.
-*   **Stack:** Next.js, Tailwind CSS, Framer Motion/Swiper.
-*   **Diseño:** Fuertes tintes "Racing/Industrial". Uso de `FeatureCard` y `RacingBackground`. Elementos glassmorphism.
+### 2. PlantillaProducto (Template Base)
+*   **Descripción:** Plantilla web premium, escalable y configurable.
+*   **Estado:** Boilerplate puro y neutro.
+
+### 3. Matias Mantenimiento (Proyecto Actual)
+*   **Descripción:** Servicio profesional de Gasista Matriculado y Plomería en Mendoza.
+*   **Estado:** En desarrollo inicial (Puesta a punto de marca y servicios).
+*   **Stack:** Next.js, Tailwind CSS, Framer Motion.
+*   **Diseño:** Tema `SILVER_PREMIUM` con enfoque en servicios técnicos.
 
 ## Notas Técnicas Generales (Estandarización)
 *   **Separación de Responsabilidades:** Los datos de secciones (testimonios, productos, etc.) deben externalizarse a archivos específicos en la carpeta `data/`.
@@ -133,6 +138,12 @@
     *   **Refactorización Senior:** Estandarización de arquitectura en todo el ecosistema. Se impulsó la separación de responsabilidades (datos en `/data`, estilos en `globals.css`) para componentes complejos.
     *   **Directivas Globales:** Sincronización de reglas de oro (No inventar datos, Documentación en Español, Eficiencia de proceso) en todos los proyectos de la red Imperia.
     *   **Interactividad Premium:** Implementación de carruseles avanzados con tarjetas CTA integradas y leyendas inteligentes para mejorar la conversión y UX.
+    *   **12/03/2026 - Evolución de Marca y Diferenciación Técnica:**
+    - **[LOGO PREMIUM V2]**: Rediseño total del logo inyectado por código. Se adoptó la fuente **Goldman** para las "MM" entrelazadas (estilo afilado y potente) y **Russo One** para el texto de marca. Se implementó un efecto de oro metálico 3D con contorno (`WebkitTextStroke`) y brillos dinámicos.
+    - **[SECCIÓN DIFERENCIALES]**: Se sacrificó la vista genérica de productos por una página de **Diferenciales** (`/products`). Grilla de impacto 2x2 con estética Glassmorphism que destaca los 4 pilares competitivos (Matriculado, Trayectoria, Respuesta, Confianza).
+    - **[REDISEÑO PERSONAL ABOUT]**: Transformación radical de `/about`. Pasó de ser un texto genérico de "plantilla producto" a una biografía profesional de **Matías Alfaro**. Enfoque en "Conoce al Profesional", humanizando la marca con 20 años de historia y compromiso real.
+    - **[HEADER SCROLL-REACTIVO]**: El logo volvió a su posición original (izquierda). Se implementó lógica de scroll que activa una cápsula de cristal y un efecto de **sombra contorneada dinámica** (`drop-shadow` agresivo) para asegurar legibilidad total sobre cualquier fondo.
+    - **[OPTIMIZACIÓN MOBILE]**: Ajustes quirúrgicos en la tarjeta de Urgencias (evitado solapamiento de badge y descripción) y escalado responsivo del logo en el header. (Matias Mantenimiento)
 
 *   **09/03/2026 - Unificación Visual y Refinamiento Premium:**
     - **[LIMPIEZA DE DATOS]**: Se eliminó la propiedad `category` de los productos en `data.tsx` y se comentó en `types/index.ts` para simplificar la estructura de datos y evitar distracciones visuales (tabs/filtros) en el catálogo.

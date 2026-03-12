@@ -1,48 +1,30 @@
 "use client";
 
-import Link from "next/link";
-import { Cinzel } from "next/font/google";
 import { useState, useEffect } from "react";
-import Image from "next/image";
-import { siteConfig } from "@/config";
-
-const cinzel = Cinzel({ subsets: ["latin"] });
+import Link from "next/link";
+import Logo from "@/components/ui/Logo";
+import { cn } from "@/lib/utils";
 
 const Header = () => {
-  const [scrolled, setScrolled] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
+      setIsScrolled(window.scrollY > 50);
     };
-
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
-    <div className="fixed z-40 w-full top-5 flex justify-start px-10">
-      <header className="flex justify-start">
+    <div className="fixed z-40 w-full top-5 flex justify-start px-6 md:px-10 pointer-events-none">
+      <header className="flex justify-start pointer-events-auto">
         <Link href="/" className="group">
-          <div
-            className="flex flex-col items-center justify-center p-2 transition-all duration-500 bg-transparent"
-          >
-            <Image
-              src={siteConfig.logo.main}
-              alt={`Logo ${siteConfig.name}`}
-              width={100}
-              height={50}
-              className={`rounded-xl transition-all duration-500 group-hover:scale-105 
-                ${scrolled ? "" : "drop-shadow-lg"}`}
-              style={
-                scrolled
-                  ? {
-                    filter:
-                      "drop-shadow(0 0 15px rgba(255,255,255,1)) drop-shadow(0 0 5px rgba(255,255,255,1))",
-                  }
-                  : {}
-              }
-            />
+          <div className={cn(
+            "flex flex-col items-center justify-center p-3 transition-all duration-700 ease-in-out origin-top-left",
+            isScrolled ? "scale-90 md:scale-75 opacity-0 md:opacity-100 pointer-events-none md:pointer-events-auto" : "scale-100 opacity-100"
+          )}>
+            <Logo size="md" isScrolled={isScrolled} />
           </div>
         </Link>
       </header>

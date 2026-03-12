@@ -1,10 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import { Button } from "@/components/ui/button";
 import { User, MessageSquare, Send } from "lucide-react";
 import { siteConfig } from "@/config";
-import Separador from "@/components/ui/separador";
 import { NeonButton } from "@/components/ui/NeonButton";
 
 import FadeIn from "@/components/ui/FadeIn";

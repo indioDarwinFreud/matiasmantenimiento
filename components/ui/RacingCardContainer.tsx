@@ -35,7 +35,7 @@ interface RacingCardContainerProps extends React.HTMLAttributes<HTMLDivElement> 
     glass?: boolean; // Activa el efecto fumigado/glassmorphism (ver descripción arriba)
 }
 
-export const RacingCardContainer = ({ children, className = "", opacity = "opacity-30", glass = false, ...props }: RacingCardContainerProps) => {
+export const RacingCardContainer = ({ children, className = "", glass = false, ...props }: RacingCardContainerProps) => {
 
     // Estilos para el modo Glass (fumigado)
     const glassStyle = {
@@ -47,8 +47,10 @@ export const RacingCardContainer = ({ children, className = "", opacity = "opaci
     // Estilos para el modo Normal (fondo del tema)
     const normalStyle = {
         backgroundColor: siteConfig.theme.backgroundCard,
-        backgroundImage: `url(${(siteConfig.theme as any).cardImage})`,
-        backgroundSize: (siteConfig.theme as any).cardImage?.startsWith('data:') ? 'auto' : 'cover',
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        backgroundImage: `url(${(siteConfig.theme as unknown as Record<string, any>).cardImage})`,
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        backgroundSize: (siteConfig.theme as unknown as Record<string, any>).cardImage?.startsWith('data:') ? 'auto' : 'cover',
         backgroundRepeat: 'repeat',
         backgroundBlendMode: 'overlay',
     };

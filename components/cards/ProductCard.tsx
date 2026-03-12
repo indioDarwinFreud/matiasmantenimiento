@@ -28,8 +28,10 @@ export default function ProductCard({ product, onImageClick }: ProductCardProps)
             className="overflow-hidden border-primary/20 hover:border-primary/50 transition-all duration-500 group shadow-2xl flex flex-col h-full hover:-translate-y-2 cursor-pointer relative backdrop-blur-md"
             style={{
                 backgroundColor: siteConfig.theme.backgroundCard,
-                backgroundImage: `url(${(siteConfig.theme as any).cardImage})`,
-                backgroundSize: (siteConfig.theme as any).cardImage.startsWith('data:') ? 'auto' : 'cover',
+                // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                backgroundImage: `url(${(siteConfig.theme as unknown as Record<string, any>).cardImage})`,
+                // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                backgroundSize: (siteConfig.theme as unknown as Record<string, any>).cardImage.startsWith('data:') ? 'auto' : 'cover',
                 backgroundRepeat: 'repeat',
                 backgroundBlendMode: 'overlay'
             }}
@@ -42,6 +44,7 @@ export default function ProductCard({ product, onImageClick }: ProductCardProps)
                 {/* Sombra interna suave */}
                 <div className="absolute inset-0 shadow-[inset_0_0_20px_rgba(0,0,0,0.1)] z-10 pointer-events-none" />
 
+                {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                     src={product.image}
                     alt={product.title}
@@ -58,15 +61,6 @@ export default function ProductCard({ product, onImageClick }: ProductCardProps)
                     </div>
                 )}
 
-                {/* Badge de Categoría */}
-                <div className="absolute top-4 right-4 z-20">
-                    <span
-                        className="text-white text-[10px] font-black px-3 py-1 rounded-full shadow-lg uppercase tracking-wider"
-                        style={{ backgroundColor: siteConfig.theme.primaryColor }}
-                    >
-                        {product.category}
-                    </span>
-                </div>
             </div>
 
             {/* Contenido */}

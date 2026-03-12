@@ -1,7 +1,7 @@
 import { siteConfig } from "@/config";
 
 import type { Metadata } from "next";
-import { Urbanist, Cinzel, Montserrat } from "next/font/google"; // Re-import Urbanist
+import { Urbanist, Cinzel, Montserrat, Goldman, Russo_One } from "next/font/google"; // Re-import Urbanist
 
 import "./globals.css";
 
@@ -22,6 +22,18 @@ const cinzel = Cinzel({
 const montserrat = Montserrat({
   subsets: ["latin"],
   variable: "--font-montserrat",
+});
+
+const goldman = Goldman({
+  weight: ["400", "700"],
+  subsets: ["latin"],
+  variable: "--font-goldman",
+});
+
+const russoOne = Russo_One({
+  weight: "400",
+  subsets: ["latin"],
+  variable: "--font-russo-one",
 });
 
 export const metadata: Metadata = {
@@ -45,7 +57,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`text-black font-sans ${urbanist.variable} ${cinzel.variable} ${montserrat.variable} relative`}
+        className={`text-black font-sans ${urbanist.variable} ${cinzel.variable} ${montserrat.variable} ${goldman.variable} ${russoOne.variable} relative`}
         style={{
           // Colores y formas (from config.ts → theme)
           "--primary-color": siteConfig.theme.primaryColor,
@@ -61,19 +73,21 @@ export default function RootLayout({
         <div
           className="fixed inset-0 -z-50 w-full h-full pointer-events-none transition-all duration-700"
           style={{
-            backgroundImage: `url(${(siteConfig.theme as any).backgroundImage})`,
-            backgroundColor: (siteConfig.theme as any).backgroundColor || '#111827', // Fallback color sólido
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
+            backgroundImage: `url(${(siteConfig.theme as unknown as Record<string, any>).backgroundImage})`,
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
+            backgroundColor: (siteConfig.theme as unknown as Record<string, any>).backgroundColor || '#111827', // Fallback color sólido
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             backgroundRepeat: 'no-repeat',
-            //filter: 'blur(20px)',     /* Difumina los píxeles grandes */
-            //transform: 'scale(1.05)'  /* Escala para evitar los bordes blancos del blur */
+            filter: 'blur(8px)',     /* Suaviza los píxeles sin perder toda la forma */
+            transform: 'scale(1.08)'  /* Escala para evitar los bordes blancos del blur */
           }}
         />
 
         {/* Noise overlay to give it a premium physical texture and remove banding/pixelation */}
         <div 
-          className="fixed inset-0 -z-40 w-full h-full pointer-events-none opacity-[0.03] mix-blend-overlay"
+          className="fixed inset-0 -z-40 w-full h-full pointer-events-none opacity-[0.05] mix-blend-overlay"
           style={{
             backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")`
           }}

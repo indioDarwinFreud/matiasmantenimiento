@@ -44,7 +44,7 @@ export default function Testimonials() {
                                     className="text-lg md:text-xl italic font-medium leading-relaxed flex-grow mb-8"
                                     style={{ color: siteConfig.theme.textColors.cardBody }}
                                 >
-                                    "{testimonial.content}"
+                                    &quot;{testimonial.content}&quot;
                                 </p>
 
                                 <div className="flex items-center gap-4 mt-auto pt-6 border-t border-neutral-300">

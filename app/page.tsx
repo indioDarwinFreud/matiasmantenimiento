@@ -5,8 +5,7 @@ import HeroStatic from "@/components/sections/HeroStatic";
 import AboutPreview from "@/components/sections/AboutPreview";
 
 
-import BestSellers from "@/components/sections/BestSellers";
-import CategoryBanners from "@/components/sections/CategoryBanners";
+import FeaturedServices from "@/components/sections/FeaturedServices";
 import Testimonials from "@/components/sections/Testimonials";
 import Separador from "@/components/ui/separador";
 
@@ -26,9 +25,7 @@ export default function Home() {
 
       <Separador />
 
-      <CategoryBanners />
-
-      <BestSellers />
+      <FeaturedServices />
 
       <Testimonials />
 

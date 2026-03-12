@@ -15,7 +15,7 @@
  * ============================================================
  */
 
-import { HomeIcon, Store, Users, Mail, MessageSquareQuote, ShieldCheck, MapPin, Facebook, Instagram, Phone } from "lucide-react";
+import { HomeIcon, Wrench, Users, Mail, MapPin, Facebook, Instagram, Phone } from "lucide-react";
 import { siteConfig } from "./config";
 import type { NavItem, Product, Testimonial, ContactItem, BusinessHour } from "./types";
 
@@ -31,8 +31,8 @@ export const itemsNavbar: NavItem[] = [
     },
     {
         id: 2,
-        title: "Productos",
-        icon: <Store size={25} strokeWidth={1} />,
+        title: "Diferenciales",
+        icon: <Wrench size={25} strokeWidth={1} />,
         link: "/products",
     },
     {
@@ -64,54 +64,54 @@ export const itemsNavbar: NavItem[] = [
 export const productsData: Product[] = [
     {
         id: 1,
-        title: "Edición Limitada Alpha",
-        location: "Colección Exclusiva",
-        description: "Diseño minimalista con acabados premium. Ideal para quienes buscan exclusividad y elegancia en cada detalle.",
+        title: "Gasista Matriculado",
+        location: "Instalaciones y Planos",
+        description: "Instalaciones de gas bajo normativa vigente, firma de planos y habilitaciones. Seguridad garantizada.",
         image: "/placeholder.svg",
        
         website: "/contact",
     },
     {
         id: 2,
-        title: "Serie Beta Essential",
-        location: "Línea Clásica",
-        description: "La combinación perfecta entre funcionalidad y estética. Un producto pensado para el uso diario sin perder el estilo.",
+        title: "Plomería Integral",
+        location: "Urgencias y Mantenimiento",
+        description: "Reparación de cañerías, limpieza de tanques, instalación de sanitarios y grifería. Soluciones rápidas.",
         image: "/placeholder.svg",
         
         website: "/contact",
     },
     {
         id: 3,
-        title: "Gamma Signature",
-        location: "Edición de Autor",
-        description: "Fabricado con materiales de la más alta calidad, representando el pináculo de nuestro diseño y manufactura.",
+        title: "Termotanques y Calefones",
+        location: "Servicio Técnico",
+        description: "Instalación, mantenimiento y reparación de todas las marcas y modelos. Service oficial de confianza.",
         image: "/placeholder.svg",
         
         website: "/contact",
     },
     {
         id: 4,
-        title: "Delta Vanguard",
-        location: "Innovación Pura",
-        description: "Líneas modernas y tecnología de vanguardia fusionadas en un solo producto que redefine los estándares actuales.",
+        title: "Detección de Filtraciones",
+        location: "Tecnología Avanzada",
+        description: "Localización exacta de fugas de agua o gas sin romper de más. Eficiencia y ahorro.",
         image: "/placeholder.svg",
         
         website: "/contact",
     },
     {
         id: 5,
-        title: "Omega Classic",
-        location: "Atemporal",
-        description: "El diseño que nunca pasa de moda. Simple, directo y construido para durar por generaciones.",
+        title: "Mantenimiento Preventivo",
+        location: "Hogares y Comercios",
+        description: "Revisión periódica de instalaciones para evitar accidentes y roturas costosas. Tu tranquilidad es primero.",
         image: "/placeholder.svg",
         
         website: "/contact",
     },
     {
         id: 6,
-        title: "Zenith Pro",
-        location: "Alto Rendimiento",
-        description: "Para los usuarios más exigentes. Cada aspecto ha sido optimizado para entregar el máximo rendimiento posible.",
+        title: "Cloacas y Desagües",
+        location: "Destapaciones",
+        description: "Limpieza profunda de cañerías y sistemas de desagüe. Equipamiento especializado para resultados duraderos.",
         image: "/placeholder.svg",
         
         website: "/contact",

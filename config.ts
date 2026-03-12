@@ -17,10 +17,10 @@ export const siteConfig = {
     // 1. Identidad de Marca Principal
     //    → Cambiá name, shortName y description para el nombre del negocio.
     // ---------------------------------------------------------------------------
-    name: "Plantilla Producto",
-    shortName: "Plantilla",
-    description: "La mejor solución para presentar tus productos de manera premium.",
-    url: "https://plantillaproducto.com",
+    name: "Matias Mantenimiento",
+    shortName: "Matias",
+    description: "Servicio profesional de Gasista Matriculado y Plomería. Soluciones rápidas y garantizadas.",
+    url: "https://matiasmantenimiento.com",
 
     // ---------------------------------------------------------------------------
     // 2. Tipografía del Sitio
@@ -86,7 +86,7 @@ export const siteConfig = {
                 cardBody: "#E5E7EB",
                 cardMuted: "#9CA3AF"
             },
-            backgroundImage: "/assets/backgrounds/gold_bg.png",
+            backgroundImage: "/assets/backgrounds/gold_bg_ultimate.png",
             // Patrón de tejido de lujo en oro para consistencia
             cardImage: "data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0l30 30-30 30L0 30z' fill='%23D4AF37' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E"
         },
@@ -116,7 +116,7 @@ export const siteConfig = {
 
     // ESTO ELIGE EL TEMA ACTIVO
     // Podés cambiarlo a: "SILVER_PREMIUM", "GOLD_EMPIRE" o "ELECTRIC_BLUE"
-    activeTheme: "SILVER_PREMIUM" as const,
+    activeTheme: "GOLD_EMPIRE" as const,
 
     get theme() {
         return this.themes[this.activeTheme];
@@ -136,7 +136,7 @@ export const siteConfig = {
     //    → Define cómo se ve el sitio en Google y al compartir en redes.
     // ---------------------------------------------------------------------------
     seo: {
-        keywords: ["productos", "negocios", "plantilla", "ecommerce", "premium", "venta"],
+        keywords: ["gasista matriculado", "plomero", "mantenimiento", "gas", "agua", "mendoza", "reparaciones"],
         author: "Imperia Virtual",
         ogImage: "/placeholder.svg", // Imagen que aparece al compartir en WhatsApp/Facebook (1200x630px ideal)
     },
@@ -147,9 +147,9 @@ export const siteConfig = {
     //    → Formato del phone: +[CódigoPaís][CódigoÁrea][Número] sin espacios.
     // ---------------------------------------------------------------------------
     contact: {
-        email: "contacto@plantillaproducto.com",
-        phone: "+5492612700341",    // Ej: +5492612345678
-        whatsappText: "¡Hola! Vengo desde su página web y me gustaría hacer una consulta.",
+        email: "matiasdeechave@gmail.com",
+        phone: "+5492615544445",    // Mantenemos el número por ahora o pedimos el real
+        whatsappText: "Hola Matias! Vengo desde la web y necesito una consulta por un servicio de mantenimiento.",
         location: "Mendoza, Argentina",
         mapsLink: "https://maps.google.com/?q=Mendoza,Argentina"
     },
@@ -161,11 +161,11 @@ export const siteConfig = {
     //      luego incluirla en data.tsx dentro de contactData.
     // ---------------------------------------------------------------------------
     socials: {
-        instagram: "https://www.instagram.com/plantilla.producto/",
-        instagramHandle: "@plantilla_producto",
+        instagram: "https://www.instagram.com/matiasmantenimiento/",
+        instagramHandle: "@matiasmantenimiento",
 
-        facebook: "https://www.facebook.com/PlantillaProducto",
-        facebookHandle: "/PlantillaProducto",
+        facebook: "https://www.facebook.com/matiasgasistamdp?locale=es_LA",
+        facebookHandle: "/matiasgasistamdp",
     },
 
     // ---------------------------------------------------------------------------
