@@ -20,7 +20,7 @@ export const siteConfig = {
     name: "Matias Mantenimiento",
     shortName: "Matias",
     description: "Servicio profesional de Gasista Matriculado y Plomería. Soluciones rápidas y garantizadas.",
-    url: "https://matiasmantenimiento.com",
+    url: "https://matiasmantenimiento.com.ar",
 
     // ---------------------------------------------------------------------------
     // 2. Tipografía del Sitio
@@ -64,7 +64,7 @@ export const siteConfig = {
                 cardBody: "#E5E7EB",
                 cardMuted: "#9CA3AF"
             },
-            backgroundImage: "/assets/backgrounds/blue_bg.png", // Fondo personalizado de usuario
+            backgroundImage: "/assets/backgrounds/FondoMM.png", // Fondo personalizado de usuario
             // Patrón de malla técnica plateada (Dots refined)
             cardImage: "data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.05' fill-rule='evenodd'%3E%3Ccircle cx='3' cy='3' r='0.5'/%3E%3C/g%3E%3C/svg%3E"
         },
@@ -108,7 +108,7 @@ export const siteConfig = {
                 cardBody: "#E2E8F0",
                 cardMuted: "#94A3B8"
             },
-            backgroundImage: "/assets/backgrounds/blue_bg.png",
+            backgroundImage: "/assets/backgrounds/FondoMM.jpeg",
             // Textura de rejilla técnica cian para el tema Blue
             cardImage: "data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg stroke='%2300E5FF' stroke-opacity='0.15' stroke-width='0.5'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4v-4H4v4H0v2h4v4h2v-4h4v-2H6zm30 0v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"
         }
