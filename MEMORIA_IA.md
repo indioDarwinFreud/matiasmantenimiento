@@ -143,3 +143,15 @@
     - **[LOGO V1 RESTAURADO]**: Se volvió a la estética original de las "MM" en fuente **Cinzel** por código, eliminando versiones experimentales. Se añadió un efecto de desaparecer por scroll en dispositivos móviles para mejorar la UX. 
     - **[RESTABLECIMIENTO GIT]**: Se corrigió un error de vinculación de repositorios, asegurando que `plantillas.git` volviera a su estado base y `matiasmantenimiento.git` contuviera el código actual.
     - **[LECCIÓN TÉCNICA - SITECONFIG]**: Se documentó la obligatoriedad de usar `siteConfig` (de `@/config`) en lugar del autocompletado genérico de `config`, para evitar importar módulos de Node/process que rompen el frontend. (Global)
+*   **12/03/2026 (Noche) - Optimización del Tema Plata:**
+    - Se activó y refinó el tema `SILVER_PREMIUM` en `config.ts`.
+    - Se eliminó el fondo dorado que estaba por error en el tema plata.
+    - Implementación de un degradado metálico profundo y patrones SVG técnicos para un look plateado de alta gama.
+    - **[EFECTO FUMIGADO V2]**: Se evolucionó el sistema de humo a uno multicapa (5 niveles) con gradientes radiales y animaciones de "drift" (desplazamiento lento).
+    - **[REFACTOR HUMO REALISTA V10]**: Se implementó un filtro de turbulencia SVG para dar textura gaseosa al humo. Se forzó la transparencia en `HeroStatic`, `AboutPreview` y `FeaturedServices` reemplazando fondos sólidos por `backgroundCard`. El humo ahora fluye en `z-0` con una opacidad del 90%, garantizando su visibilidad y realismo premium.
+    - **[MEJORAS PREMIUM V2.0]**: 
+        - Se eliminó el efecto de humo y SVG de turbulencia previos, reemplazándolos con componentes cliente dedicados (`CustomCursor.tsx` y `ParallaxBackground.tsx`).
+        - Se solucionó el crash de SSR provocado por importación y uso incorrecto de `framer-motion` (`useScroll`, `useTransform`) y propiedades del navegador (`window`, `navigator`) blindando el código con hooks `useEffect` y `"use client"`.
+        - **[FIX GLITCH PANTALLA BLANCA]**: Se eliminaron los div decorativos con filtros de desenfoque gigantes (`blur(120px)`) en `AboutPreview` y `HeroStatic` que causaban fallos de renderizado de opacidad en navegadores Chromium.
+        - Se corrigió el componente `ParallaxBackground`, aumentándolo al 140% del tamaño de pantalla e inicializando con márgenes negativos para que su desplazamiento no exponga el vacío del scroll. Además se inyectó la variable `--background-color` estricta desde `config.ts` al `layout.tsx` y `globals.css` como red de seguridad global.
+        - Se activó el efecto de Resplandor/Spotlight Interactivo en las tarjetas de `FeaturedServices` y se refinó la estética de la tipografía del Hero (mayores grosores, gradiente metálico, línea cinética de subrayado).

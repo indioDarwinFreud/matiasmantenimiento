@@ -1,3 +1,5 @@
+"use client";
+
 import FadeIn from "@/components/ui/FadeIn";
 import Link from "next/link";
 import { siteConfig } from "@/config";
@@ -14,16 +16,6 @@ export default function HeroStatic() {
     return (
         <div className="relative w-full min-h-[90vh] flex flex-col items-center justify-center overflow-hidden bg-transparent pt-20">
             
-            {/* Capas de Luces Decorativas (Aura Dorada) */}
-            <div 
-                className="absolute top-1/4 left-1/4 w-[500px] h-[500px] rounded-full opacity-20 blur-[120px] pointer-events-none z-0"
-                style={{ backgroundColor: theme.primaryColor }}
-            />
-            <div 
-                className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] rounded-full opacity-10 blur-[100px] pointer-events-none z-0"
-                style={{ backgroundColor: theme.primaryColor }}
-            />
-
             {/* Partículas de Brillo Animadas (Opcional si se desea más Wow) */}
             <div className="absolute inset-0 z-0 pointer-events-none">
                 {[...Array(5)].map((_, i) => (
@@ -64,14 +56,17 @@ export default function HeroStatic() {
                 </FadeIn>
 
                 <FadeIn delay={0.3} direction="up">
-                    {/* CAMBIO: Se redujeron los tamaños en móvil (text-3xl) p/ evitar que se corte el nombre - Línea 65 */}
-                    <h1 className="text-3xl md:text-8xl lg:text-9xl font-black mb-4 tracking-tight leading-none">
-                        <span className="block text-white drop-shadow-2xl">BIENVENIDOS A</span>
+                    {/* CAMBIO: Se redimensionó y se agregó un degradado de texto más agresivo */}
+                    <h1 className="text-4xl md:text-8xl lg:text-[10rem] font-black mb-6 tracking-tighter leading-none select-none">
+                        <span className="block text-white/90 drop-shadow-[0_10px_10px_rgba(0,0,0,0.5)]">BIENVENIDOS A</span>
                         <span 
-                            className="block font-cinzel italic tracking-tighter break-words"
+                            className="block font-cinzel italic tracking-tight"
                             style={{ 
                                 color: theme.primaryColor,
-                                textShadow: `0 0 30px ${theme.primaryColor}44`
+                                backgroundImage: `linear-gradient(to bottom, ${theme.primaryColor} 0%, #ffffff 50%, ${theme.primaryColor} 100%)`,
+                                WebkitBackgroundClip: 'text',
+                                WebkitTextFillColor: 'transparent',
+                                filter: `drop-shadow(0 0 30px ${theme.primaryColor}33)`
                             }}
                         >
                             {siteConfig.name.toUpperCase()}
@@ -80,14 +75,17 @@ export default function HeroStatic() {
                 </FadeIn>
 
                 <FadeIn delay={0.5} direction="up">
-                    <div className="relative inline-block mt-4 mb-12">
-                        <p className="text-xl md:text-3xl text-neutral-300 font-light tracking-wide max-w-2xl mx-auto leading-relaxed">
+                    <div className="relative inline-block mt-4 mb-16">
+                        <p className="text-xl md:text-3xl text-neutral-400 font-medium tracking-[0.2em] uppercase max-w-3xl mx-auto leading-relaxed opacity-80">
                             {siteConfig.description}
                         </p>
-                        {/* Subrayado elegante */}
-                        <div 
-                            className="absolute -bottom-4 left-1/2 -translate-x-1/2 w-24 h-1 rounded-full opacity-50"
+                        {/* Subrayado elegante cinético */}
+                        <motion.div 
+                            className="absolute -bottom-6 left-1/2 -translate-x-1/2 h-[1px] opacity-50"
                             style={{ backgroundColor: theme.primaryColor }}
+                            initial={{ width: 0 }}
+                            whileInView={{ width: "150px" }}
+                            transition={{ duration: 1.5, delay: 1 }}
                         />
                     </div>
                 </FadeIn>

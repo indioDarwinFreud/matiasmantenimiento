@@ -34,7 +34,7 @@ export default function Logo({ className, showText = true, size = "md", isScroll
           <span 
             className="relative z-10 -mr-[0.35em] transition-all duration-700"
             style={{ 
-              background: `linear-gradient(to bottom, ${theme.primaryColor} 0%, #FFF9E5 45%, ${theme.primaryColor} 55%, #8B6E1A 100%)`,
+              background: `linear-gradient(to bottom, ${theme.primaryColor} 0%, #FFF9E5 30%, ${theme.primaryColor} 55%, #8B6E1A 100%)`,
               WebkitBackgroundClip: "text",
               WebkitTextFillColor: "transparent",
               filter: isScrolled 

@@ -8,6 +8,7 @@ import { productsData } from "@/data";
 import { ArrowUpRight, MessageCircle } from "lucide-react";
 import Link from "next/link";
 import { Product } from "@/types/index";
+import { motion, useMotionValue, useMotionTemplate } from "framer-motion";
 
 /**
  * FeaturedServices — Sección unificada de servicios
@@ -46,18 +47,22 @@ export default function FeaturedServices() {
                 <FadeIn delay={0.2} direction="right" className="lg:col-span-2">
                     <Link href={`https://wa.me/${siteConfig.contact.phone.replace("+", "")}?text=HOLA MATIAS, TENGO UNA URGENCIA: ${mainService.title}`}>
                         <Card 
-                            className="relative h-[450px] md:h-[500px] rounded-[2.5rem] overflow-hidden border-white/10 group shadow-2xl transition-all duration-700 hover:border-primary/40 backdrop-blur-md"
-                            style={{ backgroundColor: theme.backgroundColor }}
+                            className="relative h-[450px] md:h-[500px] rounded-[2.5rem] overflow-hidden border-white/10 group shadow-2xl transition-all duration-700 hover:border-primary/40 backdrop-blur-xl"
+                            style={{ backgroundColor: theme.backgroundCard }}
                         >
-                            {/* Fondo decorativo con mármol y humo */}
-                            <div className="absolute inset-0 z-0 opacity-40 group-hover:opacity-60 transition-opacity duration-700">
-                                <img 
-                                    src="/assets/backgrounds/gold_bg_ultimate.png" 
-                                    className="w-full h-full object-cover scale-110 group-hover:scale-100 transition-transform duration-1000"
-                                    alt="Background"
-                                />
-                            </div>
-                            <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent z-10" />
+                            {/* Fondo decorativo - Mostrar solo si es tema GOLD */}
+                            {(siteConfig.activeTheme as string) === "GOLD_EMPIRE" ? (
+                                <div className="absolute inset-0 z-0 opacity-40 group-hover:opacity-60 transition-opacity duration-700">
+                                    <img 
+                                        src="/assets/backgrounds/gold_bg_ultimate.png" 
+                                        className="w-full h-full object-cover scale-110 group-hover:scale-100 transition-transform duration-1000"
+                                        alt="Background"
+                                    />
+                                </div>
+                            ) : (
+                                <div className="absolute inset-0 z-0 opacity-20 bg-gradient-to-br from-white/5 to-transparent" />
+                            )}
+                            <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent z-10" />
 
                             <div className="absolute inset-x-6 bottom-6 md:inset-x-12 md:bottom-12 z-20 flex flex-col items-start justify-end h-full py-4">
                                 <div className="max-w-xl text-left w-full">
@@ -115,12 +120,37 @@ export default function FeaturedServices() {
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 function ServiceItemMini({ service, theme }: { service: Product, theme: any }) {
+    const mouseX = useMotionValue(0);
+    const mouseY = useMotionValue(0);
+
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    function handleMouseMove({ currentTarget, clientX, clientY }: any) {
+        const { left, top } = currentTarget.getBoundingClientRect();
+        mouseX.set(clientX - left);
+        mouseY.set(clientY - top);
+    }
+
     return (
         <Link href={`https://wa.me/${siteConfig.contact.phone.replace("+", "")}?text=Hola Matias, consulto por: ${service.title}`}>
             <Card 
-                className="relative h-[234px] rounded-[2rem] overflow-hidden border-white/10 group p-8 flex flex-col justify-between hover:border-primary/40 transition-all duration-500 backdrop-blur-md"
-                style={{ backgroundColor: `${theme.backgroundColor}80` }}
+                onMouseMove={handleMouseMove}
+                className="relative h-[234px] rounded-[2rem] overflow-hidden border-white/10 group p-8 flex flex-col justify-between hover:border-primary/40 transition-all duration-500 backdrop-blur-lg"
+                style={{ backgroundColor: theme.backgroundCard }}
             >
+                {/* Spotlight Effect */}
+                <motion.div
+                    className="pointer-events-none absolute -inset-px rounded-3xl opacity-0 group-hover:opacity-100 transition duration-300"
+                    style={{
+                        background: useMotionTemplate`
+                            radial-gradient(
+                                350px circle at ${mouseX}px ${mouseY}px,
+                                ${theme.primaryColor}15,
+                                transparent 80%
+                            )
+                        `,
+                    }}
+                />
+
                 <div>
                     <h4 className="text-2xl font-black text-white mb-2 group-hover:text-primary transition-colors" style={{ color: theme.textColors.cardTitle }}>
                         {service.title}
@@ -140,12 +170,37 @@ function ServiceItemMini({ service, theme }: { service: Product, theme: any }) {
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 function ServiceItemRegular({ service, theme }: { service: Product, theme: any }) {
+    const mouseX = useMotionValue(0);
+    const mouseY = useMotionValue(0);
+
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    function handleMouseMove({ currentTarget, clientX, clientY }: any) {
+        const { left, top } = currentTarget.getBoundingClientRect();
+        mouseX.set(clientX - left);
+        mouseY.set(clientY - top);
+    }
+
     return (
         <Link href={`https://wa.me/${siteConfig.contact.phone.replace("+", "")}?text=Hola Matias, consulto por: ${service.title}`}>
             <Card 
-                className="relative rounded-[2rem] overflow-hidden border-white/10 group p-10 hover:border-primary/40 transition-all duration-500 backdrop-blur-md flex flex-col items-center text-center h-full"
-                style={{ backgroundColor: `${theme.backgroundColor}60` }}
+                onMouseMove={handleMouseMove}
+                className="relative rounded-[2rem] overflow-hidden border-white/10 group p-10 hover:border-primary/40 transition-all duration-500 backdrop-blur-lg flex flex-col items-center text-center h-full"
+                style={{ backgroundColor: theme.backgroundCard }}
             >
+                {/* Spotlight Effect */}
+                <motion.div
+                    className="pointer-events-none absolute -inset-px rounded-3xl opacity-0 group-hover:opacity-100 transition duration-300"
+                    style={{
+                        background: useMotionTemplate`
+                            radial-gradient(
+                                350px circle at ${mouseX}px ${mouseY}px,
+                                ${theme.primaryColor}15,
+                                transparent 80%
+                            )
+                        `,
+                    }}
+                />
+
                 <div 
                     className="w-16 h-16 rounded-2xl flex items-center justify-center mb-6 transition-all duration-500 group-hover:scale-110 rotate-3 group-hover:rotate-0"
                     style={{ background: `${theme.primaryColor}10`, border: `1px solid ${theme.primaryColor}20` }}

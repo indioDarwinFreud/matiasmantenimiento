@@ -49,24 +49,24 @@ export const siteConfig = {
     themes: {
         // TEMA 1: SILVER PREMIUM (Actual - Minimalista y metálico)
         SILVER_PREMIUM: {
-            primaryColor: "#C0C0C0",
-            primaryHover: "#9CA3AF",
-            backgroundMain: "linear-gradient(135deg, #111827 0%, #1f2937 100%)",
-            backgroundColor: "#111827", // Base sólida para blending
-            backgroundCard: "rgba(31, 41, 55, 0.7)", // Gris oscuro semitransparente
-            backgroundFooter: "#111827",
+            primaryColor: "#E5E7EB", // Plata claro brillante
+            primaryHover: "#D1D5DB",
+            backgroundMain: "linear-gradient(135deg, #020617 0%, #0f172a 50%, #020617 100%)", // Darker slate/black base
+            backgroundColor: "#020617",
+            backgroundCard: "rgba(15, 23, 42, 0.6)", // Glassmorphism thinner for more depth
+            backgroundFooter: "#020617",
             radius: "0.75rem",
             navbarStyle: "nucleus" as const,
             textColors: {
-                primaryLight: "#F3F4F6",
-                secondaryLight: "#C0C0C0",
+                primaryLight: "#F9FAFB",
+                secondaryLight: "#9CA3AF",
                 cardTitle: "#FFFFFF",
-                cardBody: "#D1D5DB",
+                cardBody: "#E5E7EB",
                 cardMuted: "#9CA3AF"
             },
-            backgroundImage: "/assets/backgrounds/silver_bg.png",
-            // Textura técnica limpia de puntos para evitar marcas de agua IA
-            cardImage: "data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.1' fill-rule='evenodd'%3E%3Ccircle cx='2' cy='2' r='1'/%3E%3Ccircle cx='22' cy='22' r='1'/%3E%3C/g%3E%3C/svg%3E"
+            backgroundImage: "/assets/backgrounds/blue_bg.png", // Fondo personalizado de usuario
+            // Patrón de malla técnica plateada (Dots refined)
+            cardImage: "data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.05' fill-rule='evenodd'%3E%3Ccircle cx='3' cy='3' r='0.5'/%3E%3C/g%3E%3C/svg%3E"
         },
 
         // TEMA 2: GOLD EMPIRE (Lujoso - Negro y Dorado)
@@ -116,7 +116,7 @@ export const siteConfig = {
 
     // ESTO ELIGE EL TEMA ACTIVO
     // Podés cambiarlo a: "SILVER_PREMIUM", "GOLD_EMPIRE" o "ELECTRIC_BLUE"
-    activeTheme: "GOLD_EMPIRE" as const,
+    activeTheme: "SILVER_PREMIUM" as const,
 
     get theme() {
         return this.themes[this.activeTheme];

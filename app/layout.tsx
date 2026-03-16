@@ -8,6 +8,8 @@ import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import CustomCursor from "@/components/ui/CustomCursor";
+import ParallaxBackground from "@/components/ui/ParallaxBackground";
 
 const urbanist = Urbanist({
   subsets: ["latin"],
@@ -57,46 +59,30 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`text-black font-sans ${urbanist.variable} ${cinzel.variable} ${montserrat.variable} ${goldman.variable} ${russoOne.variable} relative`}
+        className={`text-white font-sans ${urbanist.variable} ${cinzel.variable} ${montserrat.variable} ${goldman.variable} ${russoOne.variable} relative overflow-x-hidden`}
         style={{
           // Colores y formas (from config.ts → theme)
           "--primary-color": siteConfig.theme.primaryColor,
           "--primary-hover": siteConfig.theme.primaryHover,
           "--radius": siteConfig.theme.radius,
+          "--background-color": siteConfig.theme.backgroundColor,
           // Tamaños de texto (from config.ts → typography)
           "--font-size-base": siteConfig.typography.sizeBase,
           "--font-size-lg": siteConfig.typography.sizeLg,
           "--font-size-xl": siteConfig.typography.sizeXl,
         } as React.CSSProperties}
       >
-        {/* Global Seamless Background Texture (Blurred to hide pixelation) */}
-        <div
-          className="fixed inset-0 -z-50 w-full h-full pointer-events-none transition-all duration-700"
-          style={{
-            // eslint-disable-next-line @typescript-eslint/no-explicit-any
-            backgroundImage: `url(${(siteConfig.theme as unknown as Record<string, any>).backgroundImage})`,
-            // eslint-disable-next-line @typescript-eslint/no-explicit-any
-            backgroundColor: (siteConfig.theme as unknown as Record<string, any>).backgroundColor || '#111827', // Fallback color sólido
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            backgroundRepeat: 'no-repeat',
-            filter: 'blur(8px)',     /* Suaviza los píxeles sin perder toda la forma */
-            transform: 'scale(1.08)'  /* Escala para evitar los bordes blancos del blur */
-          }}
-        />
+        <CustomCursor />
+        {/* ABSOLUTE BACKGROUND LAYER - z-0 with Parallax */}
+        <ParallaxBackground />
 
-        {/* Noise overlay to give it a premium physical texture and remove banding/pixelation */}
-        <div 
-          className="fixed inset-0 -z-40 w-full h-full pointer-events-none opacity-[0.05] mix-blend-overlay"
-          style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")`
-          }}
-        />
-
-        <Navbar />
-        <Header />
-        {children}
-        <Footer />
+        {/* CONTENT LAYER - Higher z-index but with glass effects */}
+        <div className="relative z-10 min-h-screen bg-transparent">
+          <Navbar />
+          <Header />
+          <main className="bg-transparent">{children}</main>
+          <Footer />
+        </div>
       </body>
     </html>
   );

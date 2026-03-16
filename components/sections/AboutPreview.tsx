@@ -15,29 +15,13 @@ export default function AboutPreview() {
     return (
         <div className="w-full max-w-7xl mx-auto px-4 pt-16 pb-24 md:py-32 relative overflow-visible">
             
-            {/* Destaque Blanco / Bloom de Fondo Avanzado (Fumigado que se desvanece) */}
-            <div 
-                className="absolute inset-x-0 top-1/2 -translate-y-1/2 h-[120%] w-full pointer-events-none -z-10 opacity-10"
-                style={{
-                    background: `radial-gradient(circle at 40% 50%, white 0%, transparent 60%)`,
-                    filter: 'blur(100px)'
-                }}
-            />
-            <div 
-                className="absolute inset-x-0 top-1/2 -translate-y-1/2 h-full w-full pointer-events-none -z-10 opacity-5"
-                style={{
-                    background: `radial-gradient(circle at 60% 50%, white 0%, transparent 70%)`,
-                    filter: 'blur(120px)'
-                }}
-            />
-
             <div className="flex flex-col lg:flex-row items-center gap-16 lg:gap-24 relative z-10">
 
                 {/* Image Section - Premium Glass Card */}
                 <FadeIn delay={0.2} direction="right" className="w-full lg:w-1/2 relative group">
                     <div
-                        className="relative aspect-square md:aspect-[4/5] rounded-[2rem] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.5)] border border-white/10 backdrop-blur-sm"
-                        style={{ backgroundColor: theme.backgroundColor }}
+                        className="relative aspect-square md:aspect-[4/5] rounded-[2rem] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.5)] border border-white/10 backdrop-blur-xl"
+                        style={{ backgroundColor: theme.backgroundCard }}
                     >
                         {/* Interactive overlay gradient */}
                         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent z-10 opacity-60" />
